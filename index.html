@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Constructora e Inmobiliaria Santander</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <img src="img/B.jpg" alt="Logo Constructora Santander" class="logo">
+    <h1>Constructora e Inmobiliaria Santander</h1>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <section id="inicio" class="hero">
+    <div class="overlay">
+      <h2>Tu futuro comienza con una buena inversión</h2>
+      <p>Compra, venta y construcción de casas y lotes con calidad y confianza.</p>
+    </div>
+  </section>
+
+  <section id="servicios" class="light">
+    <h2>Nuestros Servicios</h2>
+    <div class="servicios-grid">
+      <div class="servicio">
+        <i class="fas fa-house-chimney"></i>
+        <h3>Venta de casas y lotes</h3>
+        <p>Encuentra el lugar ideal para tu familia o inversión.</p>
+      </div>
+      <div class="servicio">
+        <i class="fas fa-hard-hat"></i>
+        <h3>Construcción personalizada</h3>
+        <p>Diseñamos y construimos la vivienda que siempre soñaste.</p>
+      </div>
+      <div class="servicio">
+        <i class="fas fa-drafting-compass"></i>
+        <h3>Diseño arquitectónico</h3>
+        <p>Planos modernos adaptados a tus necesidades.</p>
+      </div>
+      <div class="servicio">
+        <i class="fas fa-briefcase"></i>
+        <h3>Asesoría inmobiliaria</h3>
+        <p>Te guiamos en la compra, venta o inversión de propiedades.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="proyectos" class="dark">
+    <h2>Proyectos Destacados</h2>
+    <div class="galeria">
+
+      <!-- CASA MODERNA ESQUINERA -->
+      <div class="proyecto" onclick="abrirGaleria('CASA MODERNA ESQUINERA')">
+        <img src="img/casa1/C0.jpg" alt="Casa Moderna Esquinera">
+        <img src="img/casa1/C01.jpg" alt="Casa Moderna Esquinera">
+        <img src="img/casa1/C8.jpg" alt="Casa Moderna Esquinera">
+        <img src="img/casa1/C7.jpg" alt="Casa Moderna Esquinera">
+        <img src="img/casa1/C5.jpg" alt="Casa Moderna Esquinera">
+        <img src="img/casa1/C2.jpg" alt="Casa Moderna Esquinera">
+        <h3>CASA MODERNA ESQUINERA</h3>
+      </div>
+
+      <!-- CASA MODERNA CON JACUZZI -->
+      <div class="proyecto" onclick="abrirGaleria('CASA MODERNA CON JACUZZI EN EL PATIO')">
+        <img src="img/casa4/S1.jpg" alt="Casa Moderna con Jacuzzi en el Patio">
+        <img src="img/casa4/S2.jpg" alt="Casa Moderna con Jacuzzi en el Patio">
+        <img src="img/casa4/S3.jpg" alt="Casa Moderna con Jacuzzi en el Patio">
+        <img src="img/casa4/S4.jpg" alt="Casa Moderna con Jacuzzi en el Patio">
+        <img src="img/casa4/S5.jpg" alt="Casa Moderna con Jacuzzi en el Patio">
+        <img src="img/casa4/S6.jpg" alt="Casa Moderna con Jacuzzi en el Patio">
+        <h3>CASA MODERNA CON JACUZZI EN EL PATIO</h3>
+      </div>
+
+      <!-- CASA MODERNA DE DOS PISOS -->
+      <div class="proyecto" onclick="abrirGaleria('CASA MODERNA DE DOS PISOS')">
+        <img src="img/casa5/Z1.jpg" alt="Casa Moderna de Dos Pisos">
+        <img src="img/casa5/Z2.jpg" alt="Casa Moderna de Dos Pisos">
+        <img src="img/casa5/Z3.jpg" alt="Casa Moderna de Dos Pisos">
+        <img src="img/casa5/Z4.jpg" alt="Casa Moderna de Dos Pisos">
+        <img src="img/casa3/R6.jpg" alt="Casa Moderna de Dos Pisos">
+        <img src="img/casa2/Q8.jpg" alt="Casa Moderna de Dos Pisos">
+        <h3>CASA MODERNA DE DOS PISOS</h3>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MODAL GALERÍA -->
+  <div id="modalGaleria" class="modal">
+    <span class="cerrar" onclick="cerrarGaleria()">&times;</span>
+    <div class="modal-contenido" id="contenedorImagenes"></div>
+  </div>
+
+  <section id="contacto">
+    <h2>📞 Contáctanos</h2>
+    <div class="redes">
+      <a href="https://wa.me/573167870085" target="_blank" class="whatsapp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="https://www.facebook.com/ContruSantander" target="_blank" class="facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://www.instagram.com/ContruSantander" target="_blank" class="instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="mailto:contrusanta@gmail.com" target="_blank" class="gmail">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+    <p>Puerto Asís (PUTUMAYO), Colombia</p>
+  </section>
+
+  <footer>
+    <p>© 2025 Constructora e Inmobiliaria SANTANDER — Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    function abrirGaleria(proyecto) {
+      const contenedor = document.getElementById("contenedorImagenes");
+      contenedor.innerHTML = "";
+
+      let imagenes = [];
+
+      if (proyecto === "CASA MODERNA ESQUINERA") {
+        imagenes = [
+          "img/casa1/C0.jpg",
+          "img/casa1/C01.jpg",
+          "img/casa1/C8.jpg",
+          "img/casa1/C7.jpg",
+          "img/casa1/C5.jpg",
+          "img/casa1/C2.jpg",
+          "img/casa1/C3.jpg",
+          "img/casa3/R5.jpg"
+        ];
+      } else if (proyecto === "CASA MODERNA CON JACUZZI EN EL PATIO") {
+        imagenes = [
+          "img/casa4/S1.jpg",
+          "img/casa4/S2.jpg",
+          "img/casa4/S3.jpg",
+          "img/casa4/S4.jpg",
+          "img/casa4/S5.jpg",
+          "img/casa4/S6.jpg"
+        ];
+      } else if (proyecto === "CASA MODERNA DE DOS PISOS") {
+        imagenes = [
+          "img/casa5/Z1.jpg",
+          "img/casa5/Z2.jpg",
+          "img/casa5/Z3.jpg",
+          "img/casa5/Z4.jpg",
+          "img/casa3/R6.jpg",
+          "img/casa3/R3.jpg",
+          "img/casa2/Q8.jpg",
+          "img/casa2/Q6.jpg",
+          "img/casa2/Q5.jpg"
+        ];
+      }
+
+      imagenes.forEach(src => {
+        const img = document.createElement("img");
+        img.src = src;
+        contenedor.appendChild(img);
+      });
+
+      document.getElementById("modalGaleria").style.display = "block";
+    }
+
+    function cerrarGaleria() {
+      document.getElementById("modalGaleria").style.display = "none";
+    }
+  </script>
+</body>
+</html>

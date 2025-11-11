@@ -1,0 +1,302 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #f3f3f3;
+  color: #222;
+}
+
+/* ----- ENCABEZADO ----- */
+header {
+  background: linear-gradient(90deg, #1a1a1a, #2f2f2f, #444);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 70px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+header .logo {
+  height: 100px; 
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+header .logo:hover {
+  transform: scale(1.1); /* pequeño efecto al pasar el mouse */
+}
+
+header h1 {
+  flex-grow: 1;
+  font-size: 2rem; /* tamaño del texto más grande */
+  font-weight: 700; /* más negrita */
+  letter-spacing: 1px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #f2f2f2;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+}
+
+/* ----- MENÚ DE NAVEGACIÓN ----- */
+header nav {
+  display: flex;
+  gap: 25px;
+}
+
+header nav a {
+  color: #f2f2f2;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+header nav a:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+/* ======== SECCIÓN HERO ======== */
+.hero {
+  background: url("img/fondo.jpg") center/cover no-repeat;
+  height: 70vh;
+  position: relative;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero .overlay {
+  background-color: rgba(0,0,0,0.55);
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.hero h2 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+}
+
+/* ======== SERVICIOS ======== */
+section.light {
+  background-color: #ffffff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+section.light h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #222;
+}
+
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.servicio {
+  background: #f0f0f0;
+  padding: 25px;
+  border-radius: 15px;
+  transition: 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.servicio:hover {
+  background: #e6e6e6;
+  transform: translateY(-5px);
+}
+
+.servicio i {
+  font-size: 2.5rem;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+/* ======== PROYECTOS ======== */
+section.dark {
+  background-color: #2e2e2e;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+section.dark h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.proyecto {
+  background: #3a3a3a;
+  border-radius: 15px;
+  padding: 15px;
+  transition: 0.3s;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+.proyecto:hover {
+  background: #444;
+  transform: scale(1.03);
+}
+
+.proyecto img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* ======== MODAL ======== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  overflow-y: auto;
+}
+
+.modal-contenido {
+  margin: 60px auto;
+  max-width: 900px;
+  text-align: center;
+}
+
+.modal-contenido img {
+  width: 100%;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+.cerrar {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  font-size: 2.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* ======== CONTACTO ======== */
+#contacto {
+  background: #e0e0e0;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+#contacto h2 {
+  color: #111;
+  margin-bottom: 20px;
+}
+
+.redes {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 15px;
+}
+
+.redes a {
+  font-size: 2rem;
+  color: #222;
+  transition: 0.3s;
+}
+
+.redes a:hover {
+  transform: scale(1.2);
+}
+
+.whatsapp:hover { color: #25D366; }
+.facebook:hover { color: #1877F2; }
+.instagram:hover { color: #E1306C; }
+.gmail:hover { color: #D44638; }
+
+/* ======== FOOTER ======== */
+footer {
+  background-color: #1a1a1a;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9rem;
+}
+
+/* ======== RESPONSIVE ======== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav {
+    margin-top: 10px;
+  }
+
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+  .modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.9);
+  overflow-y: auto;
+}
+
+.modal-contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 60px auto;
+  max-width: 900px;
+}
+
+.modal-contenido img {
+  width: 100%;
+  max-width: 850px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(255,255,255,0.2);
+}
+
+.cerrar {
+  position: fixed;
+  top: 20px;
+  right: 35px;
+  font-size: 2.5rem;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cerrar:hover {
+  color: #ff4444;
+}
+}
