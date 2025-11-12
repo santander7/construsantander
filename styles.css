@@ -17,7 +17,7 @@ header {
 }
 
 header .logo {
-  height: 250px; 
+  height: 150px; 
   width: auto;
   transition: transform 0.3s ease;
 }
@@ -300,5 +300,6 @@ footer {
   color: #ff4444;
 }
 }
+
 
 
