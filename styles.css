@@ -168,20 +168,26 @@ section.dark h2 {
   margin-bottom: 30px;
 }
 
+/* --- GALERÍA MEJORADA --- */
 .galeria {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 25px;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: auto;
+  justify-items: center;
 }
 
+/* Cada proyecto luce como una tarjeta */
 .proyecto {
   background: #3a3a3a;
   border-radius: 15px;
   padding: 15px;
-  transition: 0.3s;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  transition: 0.3s ease;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+  overflow: hidden;
+  width: 100%;
+  max-width: 350px;
 }
 
 .proyecto:hover {
@@ -189,10 +195,36 @@ section.dark h2 {
   transform: scale(1.03);
 }
 
+/* Imágenes ajustadas y uniformes */
 .proyecto img {
   width: 100%;
-  border-radius: 10px;
+  height: 220px;               /* Tamaño uniforme */
+  object-fit: cover;           /* Mantiene proporciones sin deformar */
+  border-radius: 12px;
   margin-bottom: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto al pasar el mouse sobre la imagen */
+.proyecto img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 20px rgba(255,255,255,0.2);
+}
+
+/* Título o texto dentro del proyecto */
+.proyecto h3 {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: #f1f1f1;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.proyecto p {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin-top: 5px;
+  line-height: 1.4;
 }
 
 /* ======== MODALES ======== */
@@ -324,3 +356,4 @@ footer {
     text-align: center;
   }
 }
+
