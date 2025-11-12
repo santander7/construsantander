@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>INMOBILARIA & CONSTRUCTORA J.S</title>
+  <title>INMOBILIARIA & CONSTRUCTORA J.S</title>
   <link rel="stylesheet" href="styles.css">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
   <header>
     <img src="J.S1.jpg" alt="Logo Constructora Santander" class="logo">
-    <h1>INMOBILARIA & CONSTRUCTORA J.S</h1>
+    <h1>INMOBILIARIA & CONSTRUCTORA J.S</h1>
     <nav>
       <a href="#inicio">Inicio</a>
       <a href="#servicios">Servicios</a>
@@ -20,39 +21,42 @@
     </nav>
   </header>
 
+  <!-- QUIÉNES SOMOS -->
   <section id="inicio" class="hero">
     <div class="overlay">
-      <h2>¿QUIENES SOMOS?</h2>
-      <p>INMOBILARIA & CONSTRUCTORA J.S es una empresa con más de 10 años de experiencia dedicada a la compra
-        y venta de lotes, construcción de viviendas y asesoría inmobiliaria personalizada.
-        Nos destacamos por ofrecer proyectos de vivienda modernos, funcionales y adaptados a las necesidades de cada cliente, 
-        garantizando siempre calidad, confianza y cumplimiento en cada obra.
-        Contamos con un equipo de profesionales comprometidos con hacer realidad tus sueños, brindando soluciones personalizadas 
-        desde el diseño hasta la entrega final.
-        Nuestra prioridad es que cada cliente encuentre con nosotros una inversión segura y una experiencia de construcción transparente,
-         honesta y satisfactoria.</p>
+      <h2>¿QUIÉNES SOMOS?</h2>
+      <p>
+        INMOBILIARIA & CONSTRUCTORA J.S es una empresa con más de 10 años de experiencia dedicada a la compra y venta de lotes, construcción de viviendas y asesoría inmobiliaria personalizada. 
+        Nos destacamos por ofrecer proyectos de vivienda modernos, funcionales y adaptados a las necesidades de cada cliente, garantizando siempre calidad, confianza y cumplimiento en cada obra. 
+        Contamos con un equipo de profesionales comprometidos con hacer realidad tus sueños, brindando soluciones personalizadas desde el diseño hasta la entrega final.
+        Nuestra prioridad es que cada cliente encuentre con nosotros una inversión segura y una experiencia de construcción transparente, honesta y satisfactoria.
+      </p>
     </div>
   </section>
 
+  <!-- SERVICIOS -->
   <section id="servicios" class="light">
     <h2>Nuestros Servicios</h2>
     <div class="servicios-grid">
-      <div class="servicio">
+      <div class="servicio" onclick="abrirServicio('venta')">
         <i class="fas fa-house-chimney"></i>
         <h3>Venta de casas y lotes</h3>
         <p>Encuentra el lugar ideal para tu familia o inversión.</p>
       </div>
-      <div class="servicio">
+
+      <div class="servicio" onclick="abrirServicio('construccion')">
         <i class="fas fa-hard-hat"></i>
         <h3>Construcción personalizada</h3>
         <p>Diseñamos y construimos la vivienda que siempre soñaste.</p>
       </div>
-      <div class="servicio">
+
+      <div class="servicio" onclick="abrirServicio('diseno')">
         <i class="fas fa-drafting-compass"></i>
         <h3>Diseño arquitectónico</h3>
         <p>Planos modernos adaptados a tus necesidades.</p>
       </div>
-      <div class="servicio">
+
+      <div class="servicio" onclick="abrirServicio('asesoria')">
         <i class="fas fa-briefcase"></i>
         <h3>Asesoría inmobiliaria</h3>
         <p>Te guiamos en la compra, venta o inversión de propiedades.</p>
@@ -60,10 +64,16 @@
     </div>
   </section>
 
+  <!-- MODAL SERVICIOS -->
+  <div id="modalServicios" class="modal">
+    <span class="cerrar" onclick="cerrarServicio()">&times;</span>
+    <div class="modal-contenido" id="contenidoServicio"></div>
+  </div>
+
+  <!-- PROYECTOS -->
   <section id="proyectos" class="dark">
     <h2>Proyectos Destacados</h2>
     <div class="galeria">
-
       <!-- CASA MODERNA ESQUINERA -->
       <div class="proyecto" onclick="abrirGaleria('CASA MODERNA ESQUINERA')">
         <h3>CASA MODERNA ESQUINERA</h3>
@@ -98,7 +108,6 @@
         <img src="R6.jpg" alt="Casa Moderna de Dos Pisos">
         <img src="Q8.jpg" alt="Casa Moderna de Dos Pisos">
       </div>
-
     </div>
   </section>
 
@@ -108,21 +117,14 @@
     <div class="modal-contenido" id="contenedorImagenes"></div>
   </div>
 
+  <!-- CONTACTO -->
   <section id="contacto">
     <h2>📞 Contáctanos</h2>
     <div class="redes">
-      <a href="https://wa.me/573167870085" target="_blank" class="whatsapp">
-        <i class="fab fa-whatsapp"></i>
-      </a>
-      <a href="https://web.facebook.com/profile.php?id=61583404332951" target="_blank" class="facebook">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-      <a href="https://www.instagram.com/construsanta00?igsh=MTFpbWZhODlsYmRsOA==&utm_source=ig_contact_invite" target="_blank" class="instagram">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="mailto:contrusantander0@gmail.com" target="_blank" class="gmail">
-        <i class="fas fa-envelope"></i>
-      </a>
+      <a href="https://wa.me/573167870085" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://web.facebook.com/profile.php?id=61583404332951" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/construsanta00?igsh=MTFpbWZhODlsYmRsOA==&utm_source=ig_contact_invite" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+      <a href="mailto:contrusantander0@gmail.com" target="_blank" class="gmail"><i class="fas fa-envelope"></i></a>
     </div>
     <p>Puerto Asís (PUTUMAYO), Colombia</p>
   </section>
@@ -131,46 +133,75 @@
     <p>© 2025 Constructora e Inmobiliaria SANTANDER — Todos los derechos reservados</p>
   </footer>
 
+  <!-- JAVASCRIPT -->
   <script>
+    // ---- MODAL DE SERVICIOS ----
+    function abrirServicio(tipo) {
+      const modal = document.getElementById("modalServicios");
+      const contenido = document.getElementById("contenidoServicio");
+
+      let titulo = "";
+      let descripcion = "";
+
+      switch (tipo) {
+        case "venta":
+          titulo = "Venta de casas y lotes";
+          descripcion = `
+            En <strong>INMOBILIARIA & CONSTRUCTORA J.S</strong> te ayudamos a encontrar el espacio perfecto 
+            para tu hogar o inversión. Contamos con una amplia oferta de lotes urbanizados, terrenos campestres 
+            y viviendas listas para habitar, siempre con los mejores estándares de calidad y legalidad.
+            Te acompañamos en todo el proceso de compra o venta, garantizando una transacción segura y confiable.
+          `;
+          break;
+
+        case "construccion":
+          titulo = "Construcción personalizada";
+          descripcion = `
+            Diseñamos y construimos tu vivienda desde cero, adaptándonos a tus necesidades, estilo y presupuesto. 
+            Nuestro equipo de arquitectos e ingenieros trabaja con materiales de alta calidad, garantizando 
+            resultados duraderos, modernos y funcionales. ¡Transformamos tus ideas en realidad!
+          `;
+          break;
+
+        case "diseno":
+          titulo = "Diseño arquitectónico";
+          descripcion = `
+            Ofrecemos servicios de diseño arquitectónico moderno y funcional, adaptado a cada tipo de terreno 
+            y estilo de vida. Creamos planos personalizados, renders 3D y asesoría técnica para que puedas 
+            visualizar tu proyecto antes de construirlo.
+          `;
+          break;
+
+        case "asesoria":
+          titulo = "Asesoría inmobiliaria";
+          descripcion = `
+            Brindamos acompañamiento integral para quienes desean comprar, vender o invertir en bienes raíces. 
+            Te asesoramos en la parte legal, técnica y financiera para que tomes decisiones seguras y rentables. 
+            Nuestra experiencia te garantiza confianza y resultados.
+          `;
+          break;
+      }
+
+      contenido.innerHTML = `<h2>${titulo}</h2><p>${descripcion}</p>`;
+      modal.style.display = "block";
+    }
+
+    function cerrarServicio() {
+      document.getElementById("modalServicios").style.display = "none";
+    }
+
+    // ---- MODAL DE GALERÍA ----
     function abrirGaleria(proyecto) {
       const contenedor = document.getElementById("contenedorImagenes");
       contenedor.innerHTML = "";
-
       let imagenes = [];
 
       if (proyecto === "CASA MODERNA ESQUINERA") {
-        imagenes = [
-          "C0.jpg",
-          "C01.jpg",
-          "C8.jpg",
-          "C7.jpg",
-          "C5.jpg",
-          "C2.jpg",
-          "C3.jpg",
-          "Q8,1.jpg"
-        ];
+        imagenes = ["C0.jpg", "C01.jpg", "C8.jpg", "C7.jpg", "C5.jpg", "C2.jpg", "Q8,1.jpg"];
       } else if (proyecto === "CASA MODERNA CON JACUZZI EN EL PATIO") {
-        imagenes = [
-          "S1.jpg",
-          "S2.jpg",
-          "S3.jpg",
-          "S4.jpg",
-          "S5.jpg",
-          "S6.jpg"
-        ];
+        imagenes = ["S1.jpg", "S2.jpg", "S3.jpg", "S4.jpg", "S5.jpg", "S6.jpg"];
       } else if (proyecto === "CASA MODERNA DE DOS PISOS") {
-        imagenes = [
-          "Z1.jpg",
-          "Q5.jpg"
-          "Z2.jpg",
-          "Z3.jpg",
-          "iZ4.jpg",
-          "R6.jpg",
-          "R3.jpg",
-          "Q8.jpg",
-          "Q6.jpg",
-          "Q5.jpg"
-        ];
+        imagenes = ["Z1.jpg", "Q5.jpg", "Z2.jpg", "Z3.jpg", "Z4.jpg", "R6.jpg", "Q8.jpg"];
       }
 
       imagenes.forEach(src => {
@@ -188,8 +219,6 @@
   </script>
 </body>
 </html>
-
-
 
 
 
