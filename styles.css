@@ -23,13 +23,13 @@ header .logo {
 }
 
 header .logo:hover {
-  transform: scale(1.1); /* pequeño efecto al pasar el mouse */
+  transform: scale(1.1);
 }
 
 header h1 {
   flex-grow: 1;
-  font-size: 2rem; /* tamaño del texto más grande */
-  font-weight: 700; /* más negrita */
+  font-size: 2rem;
+  font-weight: 700;
   letter-spacing: 1px;
   text-align: center;
   text-transform: uppercase;
@@ -56,7 +56,7 @@ header nav a:hover {
   transform: scale(1.1);
 }
 
-/* ======== SECCIÓN HERO ======== */
+/* ======== SECCIÓN HERO (QUIÉNES SOMOS) ======== */
 .hero {
   background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
               url("img/fondo.jpg") center/cover no-repeat;
@@ -85,27 +85,25 @@ header nav a:hover {
   box-shadow: 0 10px 35px rgba(0, 0, 0, 0.6);
 }
 
+/* ---- TÍTULO PLATEADO INTENSO ---- */
 .hero h2 {
   font-size: 2.8rem;
   margin-bottom: 25px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
-  background: linear-gradient(90deg, #d7d7d7 0%, #ffffff 25%, #bfbfbf 50%, #f5f5f5 75%, #dcdcdc 100%);
+  background: linear-gradient(90deg, #e0e0e0 0%, #ffffff 20%, #bfbfbf 40%, #d9d9d9 60%, #f5f5f5 80%, #cfcfcf 100%);
+  background-size: 200%;
+  background-position: 0%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.4), 0 0 20px rgba(255, 255, 255, 0.2);
-  animation: shine 3s infinite linear;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.3), 0 0 25px rgba(255, 255, 255, 0.2);
+  animation: shine 4s linear infinite;
 }
 
-/* Animación de brillo sutil */
 @keyframes shine {
-  0% {
-    background-position: 0%;
-  }
-  100% {
-    background-position: 200%;
-  }
+  0% { background-position: 0%; }
+  100% { background-position: 200%; }
 }
 
 .hero p {
@@ -115,23 +113,6 @@ header nav a:hover {
   text-align: justify;
   max-width: 800px;
   margin: 0 auto;
-}
-
-/* Versión móvil */
-@media (max-width: 768px) {
-  .hero {
-    min-height: 70vh;
-    padding: 50px 15px;
-  }
-
-  .hero h2 {
-    font-size: 2rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-    text-align: center;
-  }
 }
 
 /* ======== SERVICIOS ======== */
@@ -214,7 +195,7 @@ section.dark h2 {
   margin-bottom: 10px;
 }
 
-/* ======== MODALES (VENTANAS EMERGENTES) ======== */
+/* ======== MODALES ======== */
 .modal {
   display: none;
   position: fixed;
@@ -223,15 +204,15 @@ section.dark h2 {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro transparente */
+  background-color: rgba(0, 0, 0, 0.8);
   justify-content: center;
   align-items: center;
   overflow-y: auto;
 }
 
 .modal-contenido {
-  background-color: #ffffff; /* Fondo blanco visible */
-  color: #222; /* Texto oscuro y legible */
+  background-color: #ffffff;
+  color: #222;
   max-width: 700px;
   width: 90%;
   margin: 50px auto;
@@ -242,7 +223,6 @@ section.dark h2 {
   animation: aparecer 0.3s ease;
 }
 
-/* Texto dentro del modal */
 .modal-contenido h2 {
   color: #111;
   font-size: 1.8rem;
@@ -256,7 +236,6 @@ section.dark h2 {
   line-height: 1.6;
 }
 
-/* Botón cerrar */
 .cerrar {
   position: fixed;
   top: 20px;
@@ -272,16 +251,9 @@ section.dark h2 {
   color: #ff5555;
 }
 
-/* Animación */
 @keyframes aparecer {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* ======== CONTACTO ======== */
@@ -338,59 +310,17 @@ footer {
     margin-top: 10px;
   }
 
+  .hero {
+    min-height: 70vh;
+    padding: 50px 15px;
+  }
+
   .hero h2 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .hero p {
     font-size: 1rem;
+    text-align: center;
   }
-  .modal {
-  display: none;
-  position: fixed;
-  z-index: 100;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.9);
-  overflow-y: auto;
 }
-
-.modal-contenido {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 60px auto;
-  max-width: 900px;
-}
-
-.modal-contenido img {
-  width: 100%;
-  max-width: 850px;
-  margin-bottom: 15px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(255,255,255,0.2);
-}
-
-.cerrar {
-  position: fixed;
-  top: 20px;
-  right: 35px;
-  font-size: 2.5rem;
-  color: #fff;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.cerrar:hover {
-  color: #ff4444;
-}
-}
-
-
-
-
-
-
-
