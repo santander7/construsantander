@@ -92,21 +92,15 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// === FILTRO DE SERVICIOS Y PROYECTOS ===
-function filtrarContenido() {
-  const filtro = document.getElementById("searchInput").value.toLowerCase();
-
-  // Filtrar SERVICIOS
-  const servicios = document.querySelectorAll(".servicio");
-  servicios.forEach(servicio => {
-    const texto = servicio.innerText.toLowerCase();
-    servicio.style.display = texto.includes(filtro) ? "block" : "none";
+<script>
+  document.querySelectorAll('.dropdown > a').forEach(link => {
+    link.addEventListener('click', e => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        const submenu = link.nextElementSibling;
+        submenu.style.display =
+          submenu.style.display === 'block' ? 'none' : 'block';
+      }
+    });
   });
-
-  // Filtrar PROYECTOS
-  const proyectos = document.querySelectorAll(".proyecto");
-  proyectos.forEach(proyecto => {
-    const texto = proyecto.innerText.toLowerCase();
-    proyecto.style.display = texto.includes(filtro) ? "block" : "none";
-  });
-}
+</script>
