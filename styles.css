@@ -22,7 +22,7 @@ header {
 }
 
 header .logo {
-  height: 90px; /* Un poco más pequeño para armonía visual */
+  height: 150px; /* Un poco más pequeño para armonía visual */
   width: auto;
   margin-right: 10px; /* Logo más pegado al texto */
   transition: transform 0.3s ease;
@@ -347,6 +347,7 @@ footer {
   padding: 20px 0;
   font-size: 0.9rem;
 }
+
 
 
 
