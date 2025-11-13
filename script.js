@@ -2,7 +2,7 @@
 function abrirServicio(tipo) {
   const modal = document.getElementById("modalServicios");
   const contenido = document.getElementById("contenidoServicio");
-  let info = {
+  const info = {
     venta: {
       titulo: "Venta de casas y lotes",
       descripcion: "En INMOBILIARIA & CONSTRUCTORA J.S te ayudamos a encontrar el espacio perfecto para tu hogar o inversión..."
@@ -56,6 +56,7 @@ function abrirGaleria(proyecto) {
   imagenes.forEach(src => {
     const img = document.createElement("img");
     img.src = src;
+    img.alt = proyecto;
     contenedor.appendChild(img);
   });
 
@@ -65,44 +66,28 @@ function abrirGaleria(proyecto) {
 function cerrarGaleria() {
   document.getElementById("modalGaleria").style.display = "none";
 }
-const images = document.querySelectorAll('.proyecto img');
-const lightbox = document.createElement('div');
-lightbox.classList.add('lightbox');
-document.body.appendChild(lightbox);
 
-const img = document.createElement('img');
-lightbox.appendChild(img);
-
-images.forEach(image => {
-  image.addEventListener('click', () => {
-    img.src = image.src;
-    lightbox.classList.add('active');
-  });
-});
-
-lightbox.addEventListener('click', () => {
-  lightbox.classList.remove('active');
-});
 // ---- LIGHTBOX DE IMÁGENES ----
-const images = document.querySelectorAll('.proyecto img');
-const lightbox = document.createElement('div');
-lightbox.classList.add('lightbox');
-document.body.appendChild(lightbox);
+document.addEventListener("DOMContentLoaded", () => {
+  const images = document.querySelectorAll('.proyecto img');
+  if (images.length === 0) return;
 
-const img = document.createElement('img');
-lightbox.appendChild(img);
+  const lightbox = document.createElement('div');
+  lightbox.classList.add('lightbox');
+  const img = document.createElement('img');
+  lightbox.appendChild(img);
+  document.body.appendChild(lightbox);
 
-// Mostrar imagen al hacer clic
-images.forEach(image => {
-  image.addEventListener('click', () => {
-    img.src = image.src;
-    lightbox.classList.add('active');
+  images.forEach(image => {
+    image.addEventListener('click', () => {
+      img.src = image.src;
+      lightbox.classList.add('active');
+    });
+  });
+
+  lightbox.addEventListener('click', e => {
+    if (e.target !== img) {
+      lightbox.classList.remove('active');
+    }
   });
 });
-
-// Cerrar lightbox al hacer clic fuera
-lightbox.addEventListener('click', () => {
-  lightbox.classList.remove('active');
-});
-
-
