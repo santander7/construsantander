@@ -4,28 +4,27 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: #f8f9fb;
   color: #1a1a1a;
-  padding-top: 150px; /* para evitar que el header fijo tape el contenido */
 }
 
 /* ======== ENCABEZADO ======== */
 header {
-  background-color: #ffffff;
+  background-color: #ffffff; /* Blanco para mezclar con el logo */
   color: #0d1b2a;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding: 10px 40px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  position: fixed;   
-  width: 100%;       
+  position: sticky;
   top: 0;
   z-index: 1000;
-  gap: 15px;
+  gap: 15px; /* Espacio entre logo y texto */
 }
 
 header .logo {
-  height: 120px;
+  height: 150px;
   width: auto;
+  margin-right: 10px;
   transition: transform 0.3s ease;
 }
 
@@ -33,15 +32,18 @@ header .logo:hover {
   transform: scale(1.05);
 }
 
-/* ======== TÍTULO ======== */
+/* ======== TÍTULO DE LA EMPRESA ======== */
 header h1 {
-  font-size: 2rem;
-  font-weight: 900;
-  margin: 0;
+  font-size: 2.4rem;
+  font-weight: 1200;
+  letter-spacing: 1px;
   text-transform: uppercase;
+  margin: 0;
   background: linear-gradient(90deg, #bfa45b, #e6d098, #bfa45b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 5px rgba(191, 164, 91, 0.3);
+  flex-grow: 1;
 }
 
 /* ======== MENÚ PRINCIPAL ======== */
@@ -49,7 +51,7 @@ header h1 {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 35px;
   margin: 0;
   padding: 0;
 }
@@ -64,7 +66,7 @@ header h1 {
   font-weight: 600;
   font-size: 1rem;
   padding: 10px 5px;
-  transition: 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 .menu a:hover {
@@ -77,179 +79,283 @@ header h1 {
   position: absolute;
   top: 120%;
   left: 0;
-  background: #ffffff;
-  border-radius: 10px;
-  padding: 10px 0;
-  min-width: 200px;
+  background-color: #ffffff;
   box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  border-radius: 10px;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  min-width: 210px;
+  z-index: 100;
   opacity: 0;
   transform: translateY(10px);
-  transition: 0.3s ease;
-  z-index: 2000;
+  transition: all 0.3s ease;
 }
 
-.dropdown:hover .submenu {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
+.submenu li {
+  width: 100%;
 }
 
 .submenu li a {
   display: block;
   padding: 10px 20px;
   color: #0d1b2a;
-  transition: 0.3s ease;
+  font-size: 0.95rem;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .submenu li a:hover {
-  background: #f7f7f7;
+  background-color: #f9f6ee;
   color: #bfa45b;
 }
 
-/* Activación para móviles */
+/* Submenú visible en móvil */
 .submenu.activo {
   display: block !important;
   opacity: 1 !important;
   transform: translateY(0) !important;
 }
 
+/* Para que los enlaces sí reciban clic */
+.submenu a {
+  pointer-events: auto !important;
+  z-index: 9999;
+  position: relative;
+}
+
+/* Hover en PC */
+.dropdown:hover .submenu {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Flechita dorada */
 .dropdown > a::after {
   content: " ▼";
-  color: #bfa45b;
   font-size: 0.7em;
+  color: #bfa45b;
+  transition: transform 0.3s ease;
 }
 
-/* ======== HERO ======== */
+.dropdown:hover > a::after {
+  transform: rotate(180deg);
+}
+
+/* ======== SECCIÓN HERO (QUIÉNES SOMOS) ======== */
 .hero {
-  background: linear-gradient(rgba(13,27,42,0.7), rgba(13,27,42,0.7)),
-              url("img/fondo.jpg") center/cover no-repeat;
+  background: linear-gradient(rgba(13, 27, 42, 0.75), rgba(13, 27, 42, 0.75)),
+  url("img/fondo.jpg") center/cover no-repeat;
   color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 120px 20px;
+  min-height: 85vh;
+  padding: 80px 20px;
 }
 
+.hero .overlay {
+  background: rgba(13, 27, 42, 0.65);
+  padding: 60px 50px;
+  border-radius: 20px;
+  max-width: 900px;
+  width: 90%;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero .overlay:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 35px rgba(191, 164, 91, 0.4);
+}
+
+/* TÍTULO DORADO ANIMADO */
 .hero h2 {
-  font-size: 2.6rem;
+  font-size: 2.8rem;
+  margin-bottom: 25px;
+  font-weight: 700;
   text-transform: uppercase;
-  margin-bottom: 20px;
+  letter-spacing: 2px;
+
+  background: linear-gradient(
+    90deg,
+    #bfa45b 0%,
+    #e8c87b 20%,
+    #c9a94f 40%,
+    #e6d098 60%,
+    #bfa45b 80%,
+    #d8bc6b 100%
+  );
+  background-size: 200%;
+  background-position: 0%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.3),
+               0 0 25px rgba(255, 255, 255, 0.2);
+
+  animation: shine 4s linear infinite;
+}
+
+@keyframes shine {
+  0% { background-position: 0%; }
+  100% { background-position: 200%; }
 }
 
 .hero p {
   font-size: 1.2rem;
+  line-height: 1.9;
+  color: #f5f5f5;
+  text-align: justify;
   max-width: 800px;
-  margin: auto;
-  line-height: 1.8;
+  margin: 0 auto;
 }
 
 /* ======== SERVICIOS ======== */
+section.light {
+  background-color: #ffffff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+section.light h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #0d1b2a;
+}
+
 .servicios-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 25px;
+  gap: 30px;
   max-width: 1100px;
   margin: auto;
 }
 
 .servicio {
   background: #f0f0f0;
-  padding: 20px;
+  padding: 25px;
   border-radius: 15px;
-  text-align: center;
   transition: 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.servicio:hover {
+  background: #fdf8ef;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(191,164,91,0.3);
 }
 
 .servicio i {
-  font-size: 2.4rem;
+  font-size: 2.5rem;
   color: #bfa45b;
   margin-bottom: 10px;
 }
 
 /* ======== PROYECTOS ======== */
+section.dark {
+  background-color: #0d1b2a;
+  color: #fff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+section.dark h2 {
+  font-size: 2.4rem;
+  margin-bottom: 40px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #e8c87b;
+}
+
 .galeria {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(380px, 2fr));
   gap: 25px;
-  margin: auto;
   max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.proyecto {
+  background: #142c45;
+  border-radius: 15px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  cursor: pointer;
+}
+
+.proyecto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(191,164,91,0.4);
 }
 
 .proyecto img {
   width: 100%;
-  height: 220px;
+  height: 230px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.proyecto img:hover {
+  transform: scale(1.03);
+  opacity: 0.9;
+}
+
+.proyecto h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 5px;
+  color: #f2f2f2;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 /* ======== CONTACTO ======== */
+#contacto {
+  background: #f8f9fb;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+#contacto h2 {
+  color: #0d1b2a;
+  margin-bottom: 20px;
+}
+
 .redes a {
   font-size: 2rem;
-  margin: 0 10px;
   color: #0d1b2a;
-  transition: 0.3s ease;
+  transition: 0.3s;
 }
 
 .redes a:hover {
   transform: scale(1.2);
 }
 
+.whatsapp:hover { color: #25D366; }
+.facebook:hover { color: #1877F2; }
+.instagram:hover { color: #E1306C; }
+.gmail:hover { color: #D44638; }
+
 /* ======== FOOTER ======== */
 footer {
-  background: #0d1b2a;
+  background-color: #0d1b2a;
   color: white;
   text-align: center;
-  padding: 20px;
+  padding: 20px 0;
+  font-size: 0.9rem;
 }
 
-/* ==========================================
-   RESPONSIVE PARA CELULARES
-========================================== */
-@media (max-width: 768px) {
-
-  header {
-    flex-direction: column;
-    padding: 15px 10px;
-  }
-
-  header .logo {
-    height: 90px;
-  }
-
-  header h1 {
-    font-size: 1.4rem;
-  }
-
-  .menu {
-    flex-direction: column;
-    gap: 12px;
-    width: 100%;
-    margin-top: 10px;
-  }
-
-  .submenu {
-    position: relative;
-    min-width: 100%;
-    box-shadow: none;
-    border-radius: 8px;
-  }
-
-  body {
-    padding-top: 200px;
-  }
-
-  .hero h2 {
-    font-size: 2rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-
-  .galeria {
-    grid-template-columns: 1fr;
-  }
-
-  .proyecto img {
-    height: 180px;
-  }
-
+.ancla {
+  position: relative;
+  top: -140px;
+  height: 0;
+  display: block;
+  visibility: hidden;
 }
