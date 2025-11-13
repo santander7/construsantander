@@ -178,15 +178,7 @@
   </footer>
 
   <script>
-    // Menú activo
-    const links = document.querySelectorAll('#filtroMenu a');
-    links.forEach(link => {
-      link.addEventListener('click', () => {
-        links.forEach(l => l.classList.remove('activo'));
-        link.classList.add('activo');
-      });
-    });
-
+  
     // ---- MODALES ----
     function abrirServicio(tipo) {
       const modal = document.getElementById("modalServicios");
@@ -252,6 +244,7 @@
   </script>
 </body>
 </html>
+
 
 
 
