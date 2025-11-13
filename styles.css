@@ -127,7 +127,6 @@ header h1 {
 .dropdown:hover > a::after {
   transform: rotate(180deg);
 }
-✅ 3. Resultado esperado
 /* ======== SECCIÓN HERO (QUIÉNES SOMOS) ======== */
 .hero {
   background: linear-gradient(rgba(13, 27, 42, 0.75), rgba(13, 27, 42, 0.75)),
@@ -335,6 +334,7 @@ footer {
   padding: 20px 0;
   font-size: 0.9rem;
 }
+
 
 
 
