@@ -46,29 +46,102 @@ header h1 {
   flex-grow: 1;
 }
 
-/* ======== MENÚ DE NAVEGACIÓN ======== */
-header nav {
+/* ======== MENÚ DESPLEGABLE ======== */
+.menu {
+  list-style: none;
   display: flex;
-  gap: 25px;
   align-items: center;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
 }
 
-header nav a {
-  color: #0d1b2a;
+.menu li {
+  position: relative;
+}
+
+.menu a {
   text-decoration: none;
+  color: #0d1b2a;
   font-weight: 600;
   font-size: 1rem;
+  padding: 10px;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
-header nav a:hover,
-header nav a.activo {
-  color: #bfa45b; /* Dorado al pasar el cursor */
-  transform: scale(1.1);
-  border-bottom: 2px solid #bfa45b;
-  padding-bottom: 2px;
+.menu a:hover {
+  color: #bfa45b;
 }
 
+/* ---- Submenús ---- */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  min-width: 200px;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.submenu li a {
+  display: block;
+  padding: 10px 20px;
+  color: #0d1b2a;
+  font-size: 0.95rem;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.submenu li a:hover {
+  background-color: #f9f6ee;
+  color: #bfa45b;
+}
+
+/* ---- Mostrar submenú al pasar el mouse ---- */
+.dropdown:hover .submenu {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- Flecha dorada animada ---- */
+.dropdown > a::after {
+  content: " ▼";
+  font-size: 0.7em;
+  color: #bfa45b;
+  transition: transform 0.3s ease;
+}
+
+.dropdown:hover > a::after {
+  transform: rotate(180deg);
+}
+
+/* ---- Ajuste Responsive ---- */
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .submenu {
+    position: static;
+    box-shadow: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .dropdown:hover .submenu {
+    display: block;
+  }
+}
 /* ======== AJUSTE RESPONSIVE ======== */
 @media (max-width: 768px) {
   header {
@@ -294,6 +367,7 @@ footer {
   padding: 20px 0;
   font-size: 0.9rem;
 }
+
 
 
 
