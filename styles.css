@@ -2,13 +2,13 @@
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
-  background-color: #f3f3f3;
-  color: #222;
+  background-color: #f4f4f4;
+  color: #1a1a1a;
 }
 
 /* ======== ENCABEZADO ======== */
 header {
-  background: linear-gradient(90deg, #1a1a1a, #2f2f2f, #444);
+  background: linear-gradient(90deg, #0b1b3a, #13264d, #1f376b);
   color: white;
   display: flex;
   align-items: center;
@@ -34,7 +34,7 @@ header h1 {
   letter-spacing: 1px;
   text-align: center;
   text-transform: uppercase;
-  color: #f2f2f2;
+  color: #f5f5f5;
   margin: 0;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
@@ -53,15 +53,14 @@ header nav a {
 }
 
 header nav a:hover {
-  color: #ffffff;
+  color: #d4af37;
   transform: scale(1.1);
 }
 
-/* ======== SECCIÓN HERO (QUIÉNES SOMOS) ======== */
+/* ======== SECCIÓN HERO ======== */
 .hero {
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+  background: linear-gradient(rgba(11, 27, 58, 0.8), rgba(11, 27, 58, 0.8)),
               url("img/fondo.jpg") center/cover no-repeat;
-  position: relative;
   color: #fff;
   display: flex;
   justify-content: center;
@@ -72,7 +71,8 @@ header nav a:hover {
 }
 
 .hero .overlay {
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(212, 175, 55, 0.5);
   padding: 60px 50px;
   border-radius: 20px;
   max-width: 900px;
@@ -83,32 +83,20 @@ header nav a:hover {
 
 .hero .overlay:hover {
   transform: scale(1.02);
-  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 10px 35px rgba(212, 175, 55, 0.4);
 }
 
-/* ---- TÍTULO PLATEADO ANIMADO ---- */
+/* ---- TÍTULO ANIMADO DORADO ---- */
 .hero h2 {
   font-size: 2.8rem;
   margin-bottom: 25px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
-  background: linear-gradient(
-    90deg,
-    #e0e0e0 0%,
-    #ffffff 20%,
-    #bfbfbf 40%,
-    #d9d9d9 60%,
-    #f5f5f5 80%,
-    #cfcfcf 100%
-  );
+  background: linear-gradient(90deg, #d4af37 0%, #f7e59b 50%, #d4af37 100%);
   background-size: 200%;
-  background-position: 0%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 
-    0 0 12px rgba(255, 255, 255, 0.3),
-    0 0 25px rgba(255, 255, 255, 0.2);
   animation: shine 4s linear infinite;
 }
 
@@ -127,26 +115,20 @@ header nav a:hover {
 }
 
 /* ===== BUSCADOR ===== */
-.buscador {
-  text-align: center;
-  margin: 30px auto;
-  padding: 10px;
-}
-
 .buscador input {
   width: 80%;
   max-width: 600px;
   padding: 12px 16px;
   font-size: 1rem;
-  border: 2px solid #ccc;
+  border: 2px solid #0b1b3a;
   border-radius: 25px;
   transition: 0.3s;
 }
 
 .buscador input:focus {
   outline: none;
-  border-color: #0077cc;
-  box-shadow: 0 0 8px rgba(0, 119, 204, 0.3);
+  border-color: #d4af37;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
 }
 
 /* ======== SERVICIOS ======== */
@@ -159,39 +141,33 @@ section.light {
 section.light h2 {
   font-size: 2rem;
   margin-bottom: 30px;
-  color: #222;
-}
-
-.servicios-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 30px;
-  max-width: 1100px;
-  margin: auto;
+  color: #0b1b3a;
+  text-transform: uppercase;
 }
 
 .servicio {
-  background: #f0f0f0;
+  background: #f9f9f9;
   padding: 25px;
   border-radius: 15px;
   transition: 0.3s ease;
   box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  border-top: 3px solid #d4af37;
 }
 
 .servicio:hover {
-  background: #e6e6e6;
+  background: #fff9e6;
   transform: translateY(-5px);
 }
 
 .servicio i {
   font-size: 2.5rem;
-  color: #222;
+  color: #0b1b3a;
   margin-bottom: 10px;
 }
 
 /* ======== PROYECTOS ======== */
 section.dark {
-  background-color: #2b2b2b;
+  background-color: #0b1b3a;
   color: #fff;
   padding: 80px 20px;
   text-align: center;
@@ -203,260 +179,51 @@ section.dark h2 {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
+  color: #d4af37;
 }
 
-/* Cuadrícula responsiva y limpia */
-.galeria {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(380px, 2fr));
-  gap: 25px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 10px;
-}
-
-/* Tarjetas de proyecto */
 .proyecto {
-  background: #3b3b3b;
+  background: #13264d;
   border-radius: 15px;
   padding: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  cursor: pointer;
 }
 
 .proyecto:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
-}
-
-/* Imagen principal */
-.proyecto img {
-  width: 100%;
-  height: 230px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 12px;
-  transition: transform 0.4s ease, opacity 0.4s ease;
-}
-
-.proyecto img:hover {
-  transform: scale(1.03);
-  opacity: 0.9;
-}
-
-.proyecto h3 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-top: 5px;
-  color: #f2f2f2;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-/* === AJUSTE DEL LIGHTBOX === */
-.lightbox {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.85);
-  justify-content: center;
-  align-items: center;
-}
-
-.lightbox.active {
-  display: flex;
-}
-
-.lightbox img {
-  max-width: 80vw;   
-  max-height: 80vh;  
-  object-fit: contain;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-  transition: transform 0.3s ease;
-}
-
-.lightbox img:hover {
-  transform: scale(1.02);
-}
-
-
-/* Animación */
-@keyframes zoomIn {
-  from { transform: scale(1.9); opacity: 1; }
-  to { transform: scale(2); opacity: 2; }
-}
-
-/* === RESPONSIVE === */
-
-/* Celulares */
-@media (max-width: 600px) {
-  .lightbox img {
-    max-width: 85vw;  /* 🔹 Mucho más pequeña en pantallas pequeñas */
-    max-height: 60vh;
-  }
-}
-
-/* Tablets */
-@media (min-width: 601px) and (max-width: 1024px) {
-  .lightbox img {
-    max-width: 65vw;
-    max-height: 65vh;
-  }
-}
-
-/* Escritorios grandes */
-@media (min-width: 1025px) {
-  .lightbox img {
-    max-width: 45vw;
-    max-height: 70vh;
-  }
-}
-/* ======== MODAL GALERÍA ======== */
-#modalGaleria {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.9);
-  justify-content: center;
-  align-items: center;
-  z-index: 2000;
-  overflow-y: auto;
-  cursor: zoom-out;
-}
-
-#modalGaleria .modal-contenido {
-  background: transparent; /* sin fondo blanco */
-  box-shadow: none;
-  border-radius: 0;
-  padding: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  max-width: 90vw;
-  max-height: 85vh;
-}
-
-#modalGaleria img {
-  max-width: 45vw;   /* 🔥 controla el ancho de las imágenes */
-  max-height: 70vh;  /* 🔥 controla la altura */
-  object-fit: contain;
-  border-radius: 15px;
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-#modalGaleria img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 35px rgba(255, 255, 255, 0.5);
-}
-
-#modalGaleria .cerrar {
-  position: fixed;
-  top: 15px;
-  right: 25px;
-  font-size: 40px;
-  color: white;
-  cursor: pointer;
-  z-index: 3000;
-}
-
-.cerrar:hover {
-  color: #ff5555;
-}
-
-@keyframes aparecer {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.35);
 }
 
 /* ======== CONTACTO ======== */
 #contacto {
-  background: #e0e0e0;
+  background: #f4f4f4;
   padding: 60px 20px;
   text-align: center;
 }
 
 #contacto h2 {
-  color: #111;
+  color: #0b1b3a;
   margin-bottom: 20px;
-}
-
-.redes {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  margin-bottom: 15px;
 }
 
 .redes a {
   font-size: 2rem;
-  color: #222;
+  color: #0b1b3a;
   transition: 0.3s;
 }
 
 .redes a:hover {
+  color: #d4af37;
   transform: scale(1.2);
 }
 
-.whatsapp:hover { color: #25D366; }
-.facebook:hover { color: #1877F2; }
-.instagram:hover { color: #E1306C; }
-.gmail:hover { color: #D44638; }
-
 /* ======== FOOTER ======== */
 footer {
-  background-color: #1a1a1a;
+  background-color: #0b1b3a;
   color: white;
   text-align: center;
   padding: 20px 0;
   font-size: 0.9rem;
+  border-top: 2px solid #d4af37;
 }
-
-/* ======== RESPONSIVE ======== */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  nav {
-    margin-top: 10px;
-  }
-
-  .hero {
-    min-height: 70vh;
-    padding: 50px 15px;
-  }
-
-  .hero h2 {
-    font-size: 2rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-    text-align: center;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
