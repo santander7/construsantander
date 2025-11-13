@@ -240,9 +240,24 @@
     function cerrarGaleria() {
       document.getElementById("modalGaleria").style.display = "none";
     }
+    document.addEventListener("DOMContentLoaded", () => {
+
+  document.querySelectorAll(".dropdown > a").forEach(link => {
+    link.addEventListener("click", function(e) {
+      const submenu = this.nextElementSibling;
+
+      if (submenu && submenu.classList.contains("submenu")) {
+        e.preventDefault(); 
+        submenu.classList.toggle("activo");
+      }
+    });
+  });
+
+});
   </script>
 </body>
 </html>
+
 
 
 
