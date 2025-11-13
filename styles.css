@@ -185,7 +185,7 @@ section.dark h2 {
 /* Cuadrícula responsiva y limpia */
 .galeria {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(380px, 2fr));
   gap: 25px;
   max-width: 1200px;
   margin: 0 auto;
@@ -231,39 +231,31 @@ section.dark h2 {
   letter-spacing: 0.5px;
 }
 
-/* ==== LIGHTBOX REPARADO Y AJUSTADO ==== */
-.lightbox {
-  position: fixed;
-  inset: 0;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(6px);
-  z-index: 9999;
-  cursor: zoom-out;
-  overflow: hidden;
-}
-
-.lightbox.active {
-  display: flex;
-}
-
-/* Imagen ajustada estrictamente al tamaño de pantalla */
+/* === AJUSTE FINAL DEL LIGHTBOX (imágenes más pequeñas y adaptables) === */
 .lightbox img {
-  width: auto;
-  height: auto;
-  max-width: 50vw;   /* 🔹 Mitad del ancho de la pantalla */
-  max-height: 70vh;  /* 🔹 70% de la altura visible */
-  border-radius: 14px;
+  width: auto !important;
+  height: auto !important;
+  max-width: 45vw !important;   /* 🔹 45% del ancho visible en PC */
+  max-height: 70vh !important;  /* 🔹 70% del alto visible */
+  border-radius: 12px;
   object-fit: contain;
   box-shadow: 0 0 25px rgba(255, 255, 255, 0.25);
-  animation: zoomIn 0.3s ease;
   transition: transform 0.3s ease;
+  animation: zoomIn 0.3s ease;
 }
 
-.lightbox img:hover {
-  transform: scale(1.05);
+@media (max-width: 1024px) {
+  .lightbox img {
+    max-width: 70vw !important;
+    max-height: 65vh !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .lightbox img {
+    max-width: 85vw !important;
+    max-height: 60vh !important;
+  }
 }
 
 /* Animación */
@@ -426,6 +418,7 @@ footer {
     text-align: center;
   }
 }
+
 
 
 
