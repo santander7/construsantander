@@ -18,7 +18,7 @@ header {
 }
 
 header .logo {
-  height: 150px;
+  height: 300px;
   width: auto;
   transition: transform 0.3s ease;
 }
@@ -288,3 +288,4 @@ footer {
   padding: 20px 0;
   font-size: 0.9rem;
 }
+
