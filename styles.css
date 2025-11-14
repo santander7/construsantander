@@ -129,12 +129,13 @@ nav {
 
 .hero .overlay {
   background: rgba(13, 27, 42, 0.55);
-  padding: 50px;
+  padding: 60px 40px;     /* MÁS ESPACIO Y MEJOR DISTRIBUCIÓN */
   border-radius: 15px;
-  max-width: 900px;
+  max-width: 850px;       /* UN POCO MÁS ESTRECHO = MÁS ELEGANTE */
+  width: 90%;
+  margin: auto;           /* CENTRA EL BLOQUE */
   transition: 0.3s ease;
 }
-
 .hero .overlay:hover {
   transform: scale(1.015);
 }
@@ -156,8 +157,12 @@ nav {
 }
 
 .hero p {
-  line-height: 1.8;
-  font-size: 1.1rem;
+  line-height: 1.9;
+  font-size: 1.15rem;
+  text-align: justify;        /* SE VE MÁS PROFESIONAL */
+  text-justify: inter-word;
+  max-width: 780px;           /* EVITA QUE EL TEXTO SEA MUY ANCHO */
+  margin: 0 auto 20px auto;   /* SEPARACIÓN ENTRE PÁRRAFOS */
 }
 
 /* ======== SERVICIOS ======== */
@@ -364,6 +369,7 @@ footer {
   display: block;
   visibility: hidden;
 }
+
 
 
 
