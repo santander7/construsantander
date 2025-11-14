@@ -201,7 +201,6 @@ section.light h2 {
 }
 
 .modal-servicio {
-  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -209,13 +208,23 @@ section.light h2 {
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(4px);
-  
-  display: flex;
-  justify-content: center;     /* Centrado horizontal */
-  align-items: center;         /* Centrado vertical */
-  
-  padding: 20px;               /* para evitar que toque los bordes en celular */
+
+  display: flex;                    
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
   z-index: 9999;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease;
+}
+
+.modal-servicio.activo {
+  opacity: 1;
+  pointer-events: auto;
+}
 }
 
 .modal-servicio-contenido {
@@ -354,6 +363,7 @@ footer {
   display: block;
   visibility: hidden;
 }
+
 
 
 
