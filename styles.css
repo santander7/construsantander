@@ -370,6 +370,32 @@ footer {
   visibility: hidden;
 }
 
+/* ======== RESPONSIVE PARA CELULARES ======== */
+@media (max-width: 768px) {
+
+  .hero {
+    padding: 40px 15px;     /* Reduce padding para que no se vea tan apretado */
+    min-height: 90vh;       /* Para que el bloque cubra bien la pantalla */
+  }
+
+  .hero .overlay {
+    padding: 25px 20px;     /* Reduce padding interno */
+    max-width: 95%;         /* Hace que ya NO se salga del ancho */
+    border-radius: 12px;
+  }
+
+  .hero h2 {
+    font-size: 1.9rem;      /* Reduce tamaño del título */
+    margin-bottom: 15px;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: justify;    /* Se ve más ordenado en móvil */
+  }
+}
+
 
 
 
