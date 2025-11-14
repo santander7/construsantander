@@ -394,6 +394,92 @@ footer {
     text-align: justify;    /* Se ve más ordenado en móvil */
   }
 }
+/* ===== MENÚ HAMBURGUESA ===== */
+.hamburguesa {
+  display: none;
+  font-size: 32px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* ===== MENÚ DESKTOP ===== */
+.menu {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Submenús (hover en PC) */
+.submenu {
+  display: none;
+  position: absolute;
+  background: #222;
+  padding: 10px 0;
+  list-style: none;
+}
+
+.dropdown:hover > .submenu {
+  display: block;
+}
+
+.submenu li a {
+  display: block;
+  padding: 8px 20px;
+  color: #fff;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .hamburguesa {
+    display: block;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  .menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.9);
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 0;
+
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s ease;
+  }
+
+  .menu.activo {
+    max-height: 500px;
+  }
+
+  /* Submenús en móvil (al hacer click) */
+  .submenu {
+    position: static;
+    display: none;
+    background: rgba(0,0,0,0.5);
+    padding-left: 20px;
+  }
+
+  .submenu.activo {
+    display: block;
+  }
+
+  .dropdown > a {
+    display: block;
+    padding: 10px;
+  }
+}
 
 
 
