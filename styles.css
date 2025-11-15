@@ -1,53 +1,75 @@
-/* =========================================
-   ESTILOS BASE - TEMA CLARO
-========================================= */
+/* ======== ESTILOS GENERALES ======== */
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: #ffffff;
-  color: #222;
+  font-family: "Poppins", sans-serif;
+  background-color: #f4f6f9;
+  color: #1a1a1a;
 }
 
+/* ======== ENCABEZADO ORIGINAL (mantengo este, IGNORO el duplicado negro) ======== */
 header {
-  width: 100%;
-  background: #ffffff;
-  padding: 15px 20px;
+  background-color: #ffffff;
+  color: #0d1b2a;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
-  position: fixed;
+  padding: 10px 40px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
   top: 0;
-  left: 0;
   z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-/* LOGO */
-.logo {
-  width: 55px;
-  height: auto;
+header .logo {
+  height: 210px;
+  width: auto;
+  transition: transform 0.3s ease;
 }
 
-/* MENÚ DESKTOP */
-.menu {
+header .logo:hover {
+  transform: scale(1.04);
+}
+
+/* ======== TÍTULO ======== */
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 900;
+  margin: 0;
+  background: linear-gradient(90deg, #bfa45b, #e8d6a2, #bfa45b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 4px rgba(191, 164, 91, 0.25);
+}
+
+/* ======== MENÚ ======== */
+nav {
   display: flex;
-  list-style: none;
-  gap: 30px;
   align-items: center;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
 }
 
 .menu a {
   text-decoration: none;
-  color: #111;
+  color: #0d1b2a;
   font-weight: 600;
-  transition: .3s;
+  font-size: 0.95rem;
+  padding: 8px 5px;
+  transition: 0.3s ease;
 }
 
 .menu a:hover {
-  color: #0a66c2;
+  color: #bfa45b;
 }
 
-/* SUBMENÚ (solo PC) */
+/* ======== SUBMENÚ ======== */
 .dropdown {
   position: relative;
 }
@@ -55,192 +77,317 @@ header {
 .submenu {
   display: none;
   position: absolute;
-  background: #fff;
-  padding: 10px 0;
-  top: 100%;
+  top: 120%;
   left: 0;
-  min-width: 180px;
-  list-style: none;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  z-index: 9999;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 10px 0;
+  min-width: 200px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  opacity: 0;
+  transform: translateY(5px);
+  transition: 0.25s ease;
+  z-index: 99;
 }
 
 .dropdown:hover .submenu {
   display: block;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .submenu li a {
-  color: #111;
-  padding: 10px 20px;
   display: block;
+  padding: 10px 18px;
+  color: #0d1b2a;
+  transition: 0.25s;
 }
 
 .submenu li a:hover {
-  background: #f2f2f2;
+  background: #f4ecd3;
+  color: #bfa45b;
 }
 
-/* =========================================
-   BOTÓN HAMBURGUESA (solo móvil)
-========================================= */
-.hamburguesa {
-  display: none;
-  font-size: 32px;
-  color: #111;
-  cursor: pointer;
+.dropdown > a::after {
+  content: " ▼";
+  font-size: 0.65em;
+  color: #bfa45b;
 }
 
-/* =========================================
-   MENÚ MÓVIL
-========================================= */
-.menu-movil {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  height: 100vh;
-  width: 70%;
-  background: #ffffff;
-  box-shadow: -4px 0 15px rgba(0,0,0,0.2);
-  padding: 80px 30px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  transition: right .35s ease-in-out;
-  z-index: 2000;
-}
-
-.menu-movil.activo {
-  right: 0;
-}
-
-.menu-movil a {
-  font-size: 1.2rem;
-  color: #111;
-  text-decoration: none;
-  padding: 8px 0;
-}
-
-.menu-movil .submenu {
-  display: none;
-  background: #f8f8f8;
-  padding-left: 20px;
-  border-left: 4px solid #0a66c2;
-}
-
-.menu-movil .submenu.activo {
-  display: block;
-}
-
-/* =========================================
-   HERO
-========================================= */
+/* ======== HERO ======== */
 .hero {
-  margin-top: 110px;
-  padding: 70px 30px;
+  background: linear-gradient(rgba(13, 27, 42, 0.7), rgba(13, 27, 42, 0.7)),
+  url("img/fondo.jpg") center/cover no-repeat;
+  min-height: 80vh;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  padding: 80px 20px;
+}
+
+.hero .overlay {
+  background: rgba(13, 27, 42, 0.55);
+  padding: 60px 40px;
+  border-radius: 15px;
+  max-width: 850px;
+  width: 90%;
+  margin: auto;
+  transition: 0.3s ease;
+}
+.hero .overlay:hover {
+  transform: scale(1.015);
 }
 
 .hero h2 {
   font-size: 2.4rem;
-  color: #111;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #bfa45b, #f1e0ac, #bfa45b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: brillo 5s linear infinite;
+}
+
+@keyframes brillo {
+  0% { opacity: 0.8; }
+  50% { opacity: 1; }
+  100% { opacity: 0.8; }
 }
 
 .hero p {
-  font-size: 1.1rem;
-  max-width: 700px;
-  margin: auto;
-  line-height: 1.6;
+  line-height: 1.9;
+  font-size: 1.15rem;
+  text-align: justify;
+  text-justify: inter-word;
+  max-width: 780px;
+  margin: 0 auto 20px auto;
 }
 
-/* =========================================
-   GALERÍAS Y PROYECTOS
-========================================= */
-.galeria {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 25px;
-  padding: 20px;
-}
+/* ======== SERVICIOS ======== */
 
-.galeria img {
-  width: 100%;
-  border-radius: 8px;
-  object-fit: cover;
-}
-
-.proyecto h3 {
-  font-size: 1.2rem;
+section.light {
+  background: #ffffff;
+  padding: 70px 20px;
   text-align: center;
 }
 
-/* =========================================
-   MODALES (ajuste móvil)
-========================================= */
-.modal-contenido img {
-  width: 100%;
-  max-width: 500px;
+section.light h2 {
+  color: #0d1b2a;
+  font-size: 2rem;
+  margin-bottom: 25px;
+}
+
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
   margin: auto;
+}
+
+.servicio {
+  background: #f3f3f3;
+  padding: 25px;
+  border-radius: 15px;
+  transition: 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.servicio:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(191,164,91,0.35);
+  background: #fdf7eb;
+}
+
+.servicio i {
+  font-size: 2.4rem;
+  color: #bfa45b;
+}
+
+/* ======== MODAL ======== */
+
+.modal-servicio {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease;
+}
+
+.modal-servicio.activo {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-servicio-contenido {
+  position: relative;
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(0,0,0,0.2);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.cerrar-servicio {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ======== DETALLE ======== */
+
+.servicio-detalle {
+  max-width: 900px;
+  margin: 80px auto;
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 18px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  border-left: 6px solid #bfa45b;
+}
+
+.servicio-detalle h3 {
+  margin-top: 0;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #0d1b2a;
+}
+
+.servicio-detalle p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #333;
+}
+
+/* ======== PROYECTOS ======== */
+
+section.dark {
+  background: #0d1b2a;
+  color: #fff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+section.dark h2 {
+  color: #e8c87b;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.proyecto {
+  background: #13283f;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+  transition: 0.3s ease;
+}
+
+.proyecto:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(191,164,91,0.4);
+}
+
+.proyecto img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transition: 0.3s ease;
+}
+
+.proyecto img:hover {
+  transform: scale(1.03);
+}
+
+.proyecto h3 {
+  font-size: 1rem;
+  margin-top: 5px;
+  color: #f4f4f4;
+}
+
+/* ======== CONTACTO ======== */
+
+#contacto {
+  padding: 60px 20px;
+  text-align: center;
+  background: #f4f6f9;
+}
+
+.redes a {
+  font-size: 2.2rem;
+  margin: 10px;
+  color: #0d1b2a;
+  transition: 0.3s ease;
+}
+
+.redes a:hover {
+  transform: scale(1.25);
+}
+
+/* ======== FOOTER ======== */
+
+footer {
+  background: #0d1b2a;
+  color: white;
+  padding: 18px 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.ancla {
+  position: relative;
+  top: -130px;
+  height: 0;
   display: block;
+  visibility: hidden;
 }
 
-/* =========================================
-   RESPONSIVE — MUY IMPORTANTE
-========================================= */
-@media (max-width: 900px) {
+/* =========================================================
+   RESET GENERAL
+========================================================= */
 
-  /* Oculta menú desktop */
-  .menu {
-    display: none;
-  }
-
-  /* Muestra hamburguesa */
-  .hamburguesa {
-    display: block;
-  }
-
-  header {
-    padding: 10px 15px;
-  }
-
-  .logo {
-    width: 50px;
-  }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-@media (max-width: 600px) {
-
-  .hero h2 {
-    font-size: 1.9rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-    padding: 0 12px;
-  }
-
-  .galeria {
-    grid-template-columns: 1fr;
-    padding: 10px;
-  }
-
-  .proyecto h3 {
-    font-size: 1.1rem;
-  }
-
-  .menu-movil {
-    width: 80%;
-    padding: 70px 20px;
-  }
-}
-
-/* =========================================
-   AJUSTES EXTRA PARA CELULAR
-========================================= */
 img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+    max-width: 100%;
+    height: auto;
 }
 
-section {
-  padding: 40px 20px;
-}
+/* =========================================================
+   RESPONSIVE TABLET
+========================
