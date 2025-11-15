@@ -11,7 +11,7 @@ body {
 header {
   width: 100%;
   background: #ffffff;
-  padding: 15px 30px;
+  padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -24,9 +24,8 @@ header {
 
 /* LOGO */
 .logo {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #111;
+  width: 55px;
+  height: auto;
 }
 
 /* MENÚ DESKTOP */
@@ -63,6 +62,7 @@ header {
   min-width: 180px;
   list-style: none;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 9999;
 }
 
 .dropdown:hover .submenu {
@@ -90,7 +90,7 @@ header {
 }
 
 /* =========================================
-   MENÚ DESDE LA DERECHA (MÓVIL)
+   MENÚ MÓVIL
 ========================================= */
 .menu-movil {
   position: fixed;
@@ -105,7 +105,7 @@ header {
   flex-direction: column;
   gap: 20px;
   transition: right .35s ease-in-out;
-  z-index: 999;
+  z-index: 2000;
 }
 
 .menu-movil.activo {
@@ -131,15 +131,15 @@ header {
 }
 
 /* =========================================
-   HERO RESPONSIVE
+   HERO
 ========================================= */
 .hero {
-  margin-top: 80px;
+  margin-top: 110px;
   padding: 70px 30px;
   text-align: center;
 }
 
-.hero h1 {
+.hero h2 {
   font-size: 2.4rem;
   color: #111;
 }
@@ -152,25 +152,95 @@ header {
 }
 
 /* =========================================
-   RESPONSIVE
+   GALERÍAS Y PROYECTOS
+========================================= */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  padding: 20px;
+}
+
+.galeria img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.proyecto h3 {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* =========================================
+   MODALES (ajuste móvil)
+========================================= */
+.modal-contenido img {
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  display: block;
+}
+
+/* =========================================
+   RESPONSIVE — MUY IMPORTANTE
 ========================================= */
 @media (max-width: 900px) {
+
+  /* Oculta menú desktop */
   .menu {
     display: none;
   }
 
+  /* Muestra hamburguesa */
   .hamburguesa {
     display: block;
+  }
+
+  header {
+    padding: 10px 15px;
+  }
+
+  .logo {
+    width: 50px;
   }
 }
 
 @media (max-width: 600px) {
-  .hero h1 {
+
+  .hero h2 {
     font-size: 1.9rem;
   }
 
   .hero p {
     font-size: 1rem;
-    padding: 0 10px;
+    padding: 0 12px;
   }
+
+  .galeria {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+
+  .proyecto h3 {
+    font-size: 1.1rem;
+  }
+
+  .menu-movil {
+    width: 80%;
+    padding: 70px 20px;
+  }
+}
+
+/* =========================================
+   AJUSTES EXTRA PARA CELULAR
+========================================= */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+section {
+  padding: 40px 20px;
 }
