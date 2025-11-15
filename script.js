@@ -1,35 +1,46 @@
-// ===== ABRIR / CERRAR MENÚ HAMBURGUESA =====
-const btnMenu = document.getElementById("btnMenu");
-const menu = document.getElementById("menu");
+// ===============================================
+// BOTÓN HAMBURGUESA - ABRIR / CERRAR MENÚ LATERAL
+// ===============================================
 
-btnMenu.addEventListener("click", () => {
-  menu.classList.toggle("activo");
-  btnMenu.classList.toggle("abierto"); // Para animación del ícono
+const hamburguesa = document.querySelector(".hamburguesa");
+const menuMovil = document.querySelector(".menu-movil");
+
+hamburguesa.addEventListener("click", () => {
+  menuMovil.classList.toggle("activo");
 });
 
-// ===== SUBMENÚS EN CELULAR =====
-const dropdowns = document.querySelectorAll(".dropdown");
 
-dropdowns.forEach((drop) => {
+// ===============================================
+// SUBMENÚS EN MÓVIL
+// (solo se abren cuando la pantalla es <= 768px)
+// ===============================================
+
+document.querySelectorAll(".dropdown").forEach(drop => {
   drop.addEventListener("click", (e) => {
-    // Solo funciona en pantallas pequeñas
     if (window.innerWidth <= 768) {
       e.preventDefault();
 
       const submenu = drop.querySelector(".submenu");
 
-      // Cerrar submenús abiertos antes
-      document.querySelectorAll(".submenu.activo").forEach((openMenu) => {
-        if (openMenu !== submenu) {
-          openMenu.classList.remove("activo");
-        }
+      // Cierra otros submenús
+      document.querySelectorAll(".submenu.activo").forEach(open => {
+        if (open !== submenu) open.classList.remove("activo");
       });
 
-      // Abrir / cerrar el submenú actual
+      // Alterna el submenú actual
       submenu.classList.toggle("activo");
     }
   });
 });
 
 
+// ===============================================
+// OPCIONAL: CERRAR SUBMENÚ AL REDIMENSIONAR A PC
+// ===============================================
 
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 768) {
+    document.querySelectorAll(".submenu").forEach(s => s.classList.remove("activo"));
+    menuMovil.classList.remove("activo");
+  }
+});
