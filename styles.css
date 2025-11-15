@@ -6,120 +6,51 @@ body {
   color: #1a1a1a;
 }
 
-/* ======== ENCABEZADO ORIGINAL (DESKTOP) ======== */
-header {
+/* ============================
+   HEADER ESCRITORIO (PC)
+============================ */
+header.header {
   background-color: #ffffff;
   color: #0d1b2a;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 40px;
+  padding: 12px 40px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
-header .logo {
-  height: 210px;
-  width: auto;
-  transition: transform 0.3s ease;
+/* Ocultar botón hamburguesa en PC */
+.hamburguesa {
+  display: none;
 }
 
-header .logo:hover {
-  transform: scale(1.04);
-}
-
-header h1 {
-  font-size: 1.8rem;
-  font-weight: 900;
-  margin: 0;
-  background: linear-gradient(90deg, #bfa45b, #e8d6a2, #bfa45b);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 1px 1px 4px rgba(191, 164, 91, 0.25);
-}
-
-
-/* ============================
-   HEADER MÓVIL (OPTIMIZADO)
-============================ */
-@media (max-width: 820px) {
-
-  html, body {
-    overflow-x: hidden !important;
-    width: 100% !important;
-  }
-
-  /* Header compacto */
-  header {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    padding: 6px 14px !important;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  }
-
-  /* Icono hamburguesa visible */
-  .hamburguesa {
-    display: block !important;
-    font-size: 28px !important;
-    cursor: pointer;
-    color: #0d1b2a !important;
-  }
-
-  /* Contenedor del logo + nombre */
-  .logo-container {
-    flex: 1;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 3px;
-  }
-
-  /* Logo pequeño */
-  header .logo {
-    height: 65px !important;
-    width: auto !important;
-  }
-
-  /* Nombre pequeño */
-  header h1 {
-    font-size: 14px !important;
-    font-weight: 600 !important;
-    margin: 0 !important;
-    line-height: 1.1 !important;
-    text-align: center !important;
-    -webkit-text-fill-color: #cdb57b !important;
-    background: none !important;
-    text-shadow: none !important;
-  }
-
-  /* Ocultar menú escritorio */
-  nav .menu {
-    display: none !important;
-  }
-}
-/* ======== TÍTULO ======== */
-header h1 {
-  font-size: 1.8rem;
-  font-weight: 900;
-  margin: 0;
-  background: linear-gradient(90deg, #bfa45b, #e8d6a2, #bfa45b);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 1px 1px 4px rgba(191, 164, 91, 0.25);
-}
-
-/* ======== MENÚ ======== */
-nav {
+/* Logo + título centrado */
+.header-brand {
   display: flex;
   align-items: center;
+  gap: 15px;
 }
 
-.menu {
+.header-brand img {
+  height: 120px;
+  width: auto;
+}
+
+.header-brand h1 {
+  font-size: 1.8rem;
+  font-weight: 900;
+  margin: 0;
+  background: linear-gradient(90deg, #bfa45b, #e8d6a2, #bfa45b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 4px rgba(191, 164, 91, 0.25);
+}
+
+/* ======== MENÚ ESCRITORIO ======== */
+.menu-desktop ul {
   list-style: none;
   display: flex;
   align-items: center;
@@ -128,7 +59,7 @@ nav {
   padding: 0;
 }
 
-.menu a {
+.menu-desktop a {
   text-decoration: none;
   color: #0d1b2a;
   font-weight: 600;
@@ -137,13 +68,19 @@ nav {
   transition: 0.3s ease;
 }
 
-.menu a:hover {
+.menu-desktop a:hover {
   color: #bfa45b;
 }
 
 /* ======== SUBMENÚ ======== */
 .dropdown {
   position: relative;
+}
+
+.dropdown > a::after {
+  content: " ▼";
+  font-size: 0.65em;
+  color: #bfa45b;
 }
 
 .submenu {
@@ -159,7 +96,7 @@ nav {
   opacity: 0;
   transform: translateY(5px);
   transition: 0.25s ease;
-  z-index: 99;
+  z-index: 999;
 }
 
 .dropdown:hover .submenu {
@@ -177,12 +114,6 @@ nav {
 
 .submenu li a:hover {
   background: #f4ecd3;
-  color: #bfa45b;
-}
-
-.dropdown > a::after {
-  content: " ▼";
-  font-size: 0.65em;
   color: #bfa45b;
 }
 
@@ -581,6 +512,7 @@ img {
     display: none !important;
   }
 }
+
 
 
 
