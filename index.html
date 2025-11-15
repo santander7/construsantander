@@ -4,39 +4,49 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>INMOBILIARIA & CONSTRUCTORA J.S</title>
-
-  <!-- CSS -->
   <link rel="stylesheet" href="styles.css?v=11">
-
-  <!-- ICONOS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <!-- JS -->
   <script src="script.js" defer></script>
 </head>
 
 <body>
 
-<header>
-  <img src="J.SS.jpg" alt="Logo Constructora J.S" class="logo">
-  <h1>INMOBILIARIA & CONSTRUCTORA J.S</h1>
+<header class="header">
+  
+  <!-- Botón menú (hamburguesa) -->
+  <div class="hamburguesa" id="btnMenu">
+    <i class="fas fa-bars"></i>
+    <span>Menú</span>
+  </div>
+
+  <!-- Logo centrado -->
+  <div class="header-logo">
+    <img src="J.SS.jpg" alt="Logo Constructora J.S" class="logo">
+    <h1>INMOBILIARIA & CONSTRUCTORA J.S</h1>
+  </div>
+
+  <!-- Icono buscar -->
+  <div class="buscar">
+    <i class="fas fa-search"></i>
+  </div>
 
   <!-- Menú móvil lateral -->
-<nav class="menu-movil" id="menuMovil">
-  <a href="index.html">Inicio</a>
+  <nav class="menu-movil" id="menuMovil">
+    <a href="index.html">Inicio</a>
 
-  <p class="dropdown-movil">Servicios ▾</p>
-  <ul class="submenu">
-    <li><a href="#">Planos</a></li>
-    <li><a href="#">Construcción</a></li>
-    <li><a href="#">Arquitectura</a></li>
-  </ul>
+    <p class="dropdown-movil">Servicios ▾</p>
+    <ul class="submenu">
+      <li><a href="#">Planos</a></li>
+      <li><a href="#">Construcción</a></li>
+      <li><a href="#">Arquitectura</a></li>
+    </ul>
 
-  <a href="#">Proyectos</a>
-  <a href="#">Contacto</a>
-</nav>
+    <a href="#">Proyectos</a>
+    <a href="#">Contacto</a>
+  </nav>
 
-  <nav>
+  <!-- Menú escritorio -->
+  <nav class="menu-desktop">
     <ul class="menu" id="menu">
 
       <li class="dropdown">
@@ -78,6 +88,7 @@
 
     </ul>
   </nav>
+
 </header>
 
 <!-- QUIÉNES SOMOS -->
@@ -224,6 +235,7 @@
 
 </body>
 </html>
+
 
 
 
