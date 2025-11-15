@@ -427,7 +427,16 @@ img {
     margin: 0 0 6px 0 !important;
   }
 
-  /* Ocultar el menú horizontal en móvil y mostrar hamburguesa */
+  
+  /* Mostrar icono hamburguesa en móvil */
+.hamburguesa {
+  display: block !important;
+}
+
+/* Ocultar menú de escritorio */
+nav .menu {
+  display: none !important;
+}
   .menu {
     display: none !important;
     width: 100% !important;
@@ -438,35 +447,68 @@ img {
     z-index: 2001;
   }
 
-  /* Si tienes un menu-movil o .menu.activo, asegúrate que ocupe todo el ancho */
-  .menu-movil,
-  nav .menu.activo,
-  .menu.activo {
-    position: fixed !important;
-    top: 0;
-    right: 0;
-    left: 0;
-    width: 100% !important;
-    height: 100vh !important;
-    background: #ffffff !important;
-    padding-top: 110px !important; /* deja espacio para header */
-    overflow-y: auto !important;
-    z-index: 2000 !important;
-  }
+ /* ======== MENÚ MÓVIL ======== */
+.menu-movil {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  max-width: 320px;
+  height: 100vh;
+  background: #ffffff;
+  box-shadow: -3px 0 12px rgba(0,0,0,0.15);
+  padding-top: 130px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-left: 25px;
+  transition: right .35s ease-out;
+  z-index: 2000;
+}
 
-  /* Aseguramos que la sección principal ocupe todo el ancho */
-  .hero,
-  .section-quienes,
-  section.light,
-  section.dark,
-  .servicios-grid,
-  .galeria {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding-left: 12px !important;
-    padding-right: 12px !important;
-    box-sizing: border-box !important;
-  }
+.menu-movil a,
+.menu-movil p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0d1b2a;
+  text-decoration: none;
+  padding: 10px 0;
+}
+
+.menu-movil a:hover {
+  color: #bfa45b;
+}
+
+.menu-movil .submenu {
+  display: none;
+  padding-left: 15px;
+  flex-direction: column;
+}
+
+.menu-movil .dropdown-movil {
+  cursor: pointer;
+}
+
+.menu-movil .dropdown-movil.activo + .submenu {
+  display: flex;
+}
+
+/* Mostrar menu-movil cuando está activo */
+.menu-movil.activo {
+  right: 0 !important;
+}
+
+/* ======= ICONO HAMBURGUESA ======= */
+.hamburguesa {
+  display: none;
+  font-size: 32px;
+  cursor: pointer;
+  color: #0d1b2a;
+}
+
+.hamburguesa:hover {
+  color: #bfa45b;
+}
 
   /* Ajustes para el overlay "Quiénes somos" */
   .hero .overlay {
@@ -487,4 +529,5 @@ img {
     height: auto !important;
   }
 }
+
 
