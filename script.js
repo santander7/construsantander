@@ -1,46 +1,28 @@
-// ===============================================
-// BOTÓN HAMBURGUESA - ABRIR / CERRAR MENÚ LATERAL
-// ===============================================
+// sencillo toggle para menú móvil
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.querySelector('.hamburguesa');
+  const menuMovil = document.querySelector('.menu-movil') || document.querySelector('.menu');
 
-const hamburguesa = document.querySelector(".hamburguesa");
-const menuMovil = document.querySelector(".menu-movil");
+  if (!btn || !menuMovil) return;
 
-hamburguesa.addEventListener("click", () => {
-  menuMovil.classList.toggle("activo");
-});
+  btn.addEventListener('click', () => {
+    menuMovil.classList.toggle('activo');
+    document.body.classList.toggle('menu-open'); // opcional: evitar scroll de fondo
+  });
 
+  // Cerrar menú al click en enlace (mejor UX)
+  menuMovil.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      menuMovil.classList.remove('activo');
+      document.body.classList.remove('menu-open');
+    });
+  });
 
-// ===============================================
-// SUBMENÚS EN MÓVIL
-// (solo se abren cuando la pantalla es <= 768px)
-// ===============================================
-
-document.querySelectorAll(".dropdown").forEach(drop => {
-  drop.addEventListener("click", (e) => {
-    if (window.innerWidth <= 768) {
-      e.preventDefault();
-
-      const submenu = drop.querySelector(".submenu");
-
-      // Cierra otros submenús
-      document.querySelectorAll(".submenu.activo").forEach(open => {
-        if (open !== submenu) open.classList.remove("activo");
-      });
-
-      // Alterna el submenú actual
-      submenu.classList.toggle("activo");
+  // Opcional: cerrar al redimensionar a desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 820) {
+      menuMovil.classList.remove('activo');
+      document.body.classList.remove('menu-open');
     }
   });
-});
-
-
-// ===============================================
-// OPCIONAL: CERRAR SUBMENÚ AL REDIMENSIONAR A PC
-// ===============================================
-
-window.addEventListener("resize", () => {
-  if (window.innerWidth > 768) {
-    document.querySelectorAll(".submenu").forEach(s => s.classList.remove("activo"));
-    menuMovil.classList.remove("activo");
-  }
 });
