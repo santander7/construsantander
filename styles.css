@@ -454,7 +454,7 @@ img {
 }
 
 /* ============================
-   HEADER MÓVIL OPTIMIZADO
+   HEADER MÓVIL FINAL CORREGIDO
 ============================ */
 @media (max-width: 820px) {
 
@@ -472,63 +472,86 @@ img {
     background: #fff;
     width: 100%;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 1000;
   }
 
   /* Ícono hamburguesa */
   .hamburguesa {
     display: block !important;
-    font-size: 28px !important;
+    font-size: 32px !important;
     color: #0d1b2a !important;
-    margin-right: 4px;
+    cursor: pointer;
+    z-index: 2001;
   }
 
-  /* OCULTAR TEXTO DE MENÚ (EN CASO DE EXISTIR) */
+  /* OCULTAR TEXTO DE MENÚ (por si existe) */
   .texto-menu {
     display: none !important;
     visibility: hidden !important;
   }
 
-  /* Contenedor del logo + nombre */
-  .logo-container {
-    flex: 1 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 3px;
+  /* LOGO + TITULO */
+  .header-brand {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
   }
 
-  /* LOGO AJUSTADO */
-  header .logo, .logo {
-    height: 60px !important;      /* Tamaño ideal */
-    width: auto !important;
-    margin: 0 auto;
+  .header-brand img {
+    width: 70px !important;
+    height: auto !important;
   }
 
-  /* NOMBRE DE EMPRESA AJUSTADO */
-  header h1 {
-    font-size: 13.5px !important;
-    font-weight: 600 !important;
-    text-align: center !important;
-    line-height: 1.1 !important;
-    margin: 0 !important;
-
-    /* Colores más suaves en móvil */
-    background: none !important;
-    -webkit-text-fill-color: #cdb57b !important;
-    text-shadow: none !important;
+  .header-brand h1 {
+    font-size: 14px !important;
+    line-height: 1.1;
+    margin: 0;
+    color: #cdb57b !important;
+    text-align: center;
   }
 
-  /* Ocultar menú de escritorio */
-  nav .menu {
+  /* OCULTAR MENÚ DE ESCRITORIO */
+  nav.menu-desktop,
+  .menu-desktop {
     display: none !important;
   }
+
+  /* ========= MENÚ MÓVIL ========== */
+  .menu-movil {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background: #fff;
+    box-shadow: -5px 0 12px rgba(0,0,0,0.15);
+    padding-top: 110px;
+    padding-left: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    transition: right .35s ease-out;
+    z-index: 2000;
+  }
+
+  .menu-movil a {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0d1b2a;
+    text-decoration: none;
+  }
+
+  .menu-movil a:hover {
+    color: #cdb57b;
+  }
+
+  /* Cuando se abre el menú */
+  .menu-movil.activo {
+    right: 0 !important;
+  }
 }
-
-
-
-
-
-
-
-
