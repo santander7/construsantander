@@ -1,75 +1,66 @@
-/* ======== ESTILOS GENERALES ======== */
-body {
-  margin: 0;
-  font-family: "Poppins", sans-serif;
-  background-color: #f4f6f9;
-  color: #1a1a1a;
-}
-
-/* ======== ENCABEZADO ======== */
-header {
-  background-color: #ffffff;
-  color: #0d1b2a;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 40px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-header .logo {
-  height: 210px;
-  width: auto;
-  transition: transform 0.3s ease;
-}
-
-header .logo:hover {
-  transform: scale(1.04);
-}
-
-/* ======== TÍTULO ======== */
-header h1 {
-  font-size: 1.8rem;
-  font-weight: 900;
-  margin: 0;
-  background: linear-gradient(90deg, #bfa45b, #e8d6a2, #bfa45b);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 1px 1px 4px rgba(191, 164, 91, 0.25);
-}
-
-/* ======== MENÚ ======== */
-nav {
-  display: flex;
-  align-items: center;
-}
-
-.menu {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  gap: 30px;
+/* ================================
+   RESET
+================================ */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-.menu a {
+body {
+  font-family: Arial, sans-serif;
+  background: #f7f7f7;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* ================================
+   HEADER
+================================ */
+header {
+  width: 100%;
+  background: #000;
+  padding: 20px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.contenedor {
+  width: 90%;
+  max-width: 1300px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  width: 150px;
+  height: auto;
+}
+
+/* ================================
+   MENÚ DESKTOP
+================================ */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+nav ul li a {
   text-decoration: none;
-  color: #0d1b2a;
+  color: #fff;
   font-weight: 600;
-  font-size: 0.95rem;
-  padding: 8px 5px;
-  transition: 0.3s ease;
+  padding: 10px;
 }
 
-.menu a:hover {
-  color: #bfa45b;
+nav ul li a:hover {
+  color: #d6d6d6;
 }
 
-/* ======== SUBMENÚ ======== */
 .dropdown {
   position: relative;
 }
@@ -77,536 +68,243 @@ nav {
 .submenu {
   display: none;
   position: absolute;
-  top: 120%;
+  background: #111;
+  list-style: none;
+  width: 180px;
+  top: 40px;
   left: 0;
-  background-color: #ffffff;
-  border-radius: 10px;
   padding: 10px 0;
-  min-width: 200px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-  opacity: 0;
-  transform: translateY(5px);
-  transition: 0.25s ease;
-  z-index: 99;
-}
-
-.dropdown:hover .submenu {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .submenu li a {
   display: block;
-  padding: 10px 18px;
-  color: #0d1b2a;
-  transition: 0.25s;
-}
-
-.submenu li a:hover {
-  background: #f4ecd3;
-  color: #bfa45b;
-}
-
-.dropdown > a::after {
-  content: " ▼";
-  font-size: 0.65em;
-  color: #bfa45b;
-}
-
-/* ======== HERO ======== */
-.hero {
-  background: linear-gradient(rgba(13, 27, 42, 0.7), rgba(13, 27, 42, 0.7)),
-  url("img/fondo.jpg") center/cover no-repeat;
-  min-height: 80vh;
+  padding: 8px 15px;
   color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 80px 20px;
 }
 
-.hero .overlay {
-  background: rgba(13, 27, 42, 0.55);
-  padding: 60px 40px;     /* MÁS ESPACIO Y MEJOR DISTRIBUCIÓN */
-  border-radius: 15px;
-  max-width: 850px;       /* UN POCO MÁS ESTRECHO = MÁS ELEGANTE */
-  width: 90%;
-  margin: auto;           /* CENTRA EL BLOQUE */
-  transition: 0.3s ease;
-}
-.hero .overlay:hover {
-  transform: scale(1.015);
+.dropdown:hover .submenu {
+  display: block;
 }
 
-.hero h2 {
-  font-size: 2.4rem;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  background: linear-gradient(90deg, #bfa45b, #f1e0ac, #bfa45b);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: brillo 5s linear infinite;
-}
-
-@keyframes brillo {
-  0% { opacity: 0.8; }
-  50% { opacity: 1; }
-  100% { opacity: 0.8; }
-}
-
-.hero p {
-  line-height: 1.9;
-  font-size: 1.15rem;
-  text-align: justify;        /* SE VE MÁS PROFESIONAL */
-  text-justify: inter-word;
-  max-width: 780px;           /* EVITA QUE EL TEXTO SEA MUY ANCHO */
-  margin: 0 auto 20px auto;   /* SEPARACIÓN ENTRE PÁRRAFOS */
-}
-
-/* ======== SERVICIOS ======== */
-section.light {
-  background: #ffffff;
-  padding: 70px 20px;
-  text-align: center;
-}
-
-section.light h2 {
-  color: #0d1b2a;
-  font-size: 2rem;
-  margin-bottom: 25px;
-}
-
-.servicios-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 30px;
-  max-width: 1100px;
-  margin: auto;
-}
-
-.servicio {
-  background: #f3f3f3;
-  padding: 25px;
-  border-radius: 15px;
-  transition: 0.3s ease;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-}
-
-.servicio:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(191,164,91,0.35);
-  background: #fdf7eb;
-}
-
-.servicio i {
-  font-size: 2.4rem;
-  color: #bfa45b;
-}
-
-.modal-servicio {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(4px);
-
-  display: flex;                    
-  justify-content: center;
-  align-items: center;
-
-  padding: 20px;
-  z-index: 9999;
-
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity .25s ease;
-}
-
-.modal-servicio.activo {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.modal-servicio-contenido {
-  position: relative;   /* NECESARIO PARA EL BOTÓN */
-  background: #fff;
-  padding: 30px;
-  border-radius: 15px;
-  max-width: 500px;
-  width: 100%;
-  text-align: center;
-  box-shadow: 0 0 25px rgba(0,0,0,0.2);
-  animation: fadeIn 0.3s ease-in-out;
-}
-
-/* Botón de cerrar */
-.cerrar-servicio {
-  position: absolute;
-  top: 12px;
-  right: 15px;
-  font-size: 24px;
+/* ================================
+   MENÚ HAMBURGUESA (MÓVIL)
+================================ */
+.hamburguesa {
+  display: none;
+  color: #fff;
+  font-size: 32px;
   cursor: pointer;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
-}
-/* ======== DETALLE DE SERVICIO (NUEVO) ======== */
-.servicio-detalle {
-  max-width: 900px;
-  margin: 80px auto;
-  background: #ffffff;
-  padding: 40px 30px;
-  border-radius: 18px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-  border-left: 6px solid #bfa45b;
-}
-
-.servicio-detalle h3 {
-  margin-top: 0;
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: #0d1b2a;
-}
-
-.servicio-detalle p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: #333;
-}
-
-/* ======== PROYECTOS ======== */
-section.dark {
-  background: #0d1b2a;
-  color: #fff;
-  padding: 80px 20px;
-  text-align: center;
-}
-
-section.dark h2 {
-  color: #e8c87b;
-  font-size: 2.2rem;
-  margin-bottom: 40px;
-}
-
-.galeria {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.proyecto {
-  background: #13283f;
-  border-radius: 12px;
-  padding: 15px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.4);
-  transition: 0.3s ease;
-}
-
-.proyecto:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(191,164,91,0.4);
-}
-
-.proyecto img {
-  width: 100%;
-  height: 210px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  transition: 0.3s ease;
-}
-
-.proyecto img:hover {
-  transform: scale(1.03);
-}
-
-.proyecto h3 {
-  font-size: 1rem;
-  margin-top: 5px;
-  color: #f4f4f4;
-}
-
-/* ======== CONTACTO ======== */
-#contacto {
-  padding: 60px 20px;
-  text-align: center;
-  background: #f4f6f9;
-}
-
-.redes a {
-  font-size: 2.2rem;
-  margin: 10px;
-  color: #0d1b2a;
-  transition: 0.3s ease;
-}
-
-.redes a:hover {
-  transform: scale(1.25);
-}
-
-/* ======== FOOTER ======== */
-footer {
-  background: #0d1b2a;
-  color: white;
-  padding: 18px 0;
-  text-align: center;
-  font-size: 0.9rem;
-}
-
-.ancla {
-  position: relative;
-  top: -130px;
-  height: 0;
-  display: block;
-  visibility: hidden;
-}
-
-/* =========================================================
-   RESET GENERAL – NECESARIO PARA QUE NADA SE DESBORDE
-========================================================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    overflow-x: hidden;
-    background-color: #f5f5f5;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* =========================================================
-   HEADER – LOGO + TÍTULO + MENÚ
-========================================================= */
-
-header {
-    width: 100%;
-    background: #000;
-    padding: 15px 20px;
-    position: relative;
-}
-
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo img {
-    width: 150px;
-    height: auto;
-}
-
-.titulo-header {
-    color: #d4b15f;
-    font-size: 1.8rem;
-    font-weight: 700;
-}
-
-/* =========================================================
-   MENÚ GENERAL (DESKTOP)
-========================================================= */
-
-nav {
-    position: relative;
-    z-index: 9999;
-}
-
-.hamburguesa {
-    display: none;
-    font-size: 32px;
-    color: #fff;
-    cursor: pointer;
-}
-
 .menu {
-    display: flex;
-    list-style: none;
-    gap: 25px;
+  transition: max-height 0.3s ease;
 }
 
-.menu a {
-    color: #fff;
-    font-weight: 600;
-    text-decoration: none;
-    padding: 5px 10px;
+/* ================================
+   HERO
+================================ */
+.hero {
+  width: 100%;
+  height: 100vh;
+  background: url("IMG/PORTADA.png") no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 120px;
 }
 
-/* Submenús en PC */
-.submenu {
-    display: none;
-    position: absolute;
-    background: #222;
-    list-style: none;
-    padding: 10px 0;
+.overlay {
+  background: rgba(0, 0, 0, 0.55);
+  padding: 40px;
+  max-width: 700px;
+  border-radius: 15px;
+  text-align: center;
+  color: #fff;
 }
 
-.dropdown:hover .submenu {
-    display: block;
+.overlay h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
 }
 
-.submenu li a {
-    display: block;
-    padding: 8px 20px;
+.overlay p {
+  font-size: 1.2rem;
 }
 
-/* =========================================================
-   SECCIÓN QUIÉNES SOMOS
-========================================================= */
-
+/* ================================
+   QUIÉNES SOMOS
+================================ */
 .section-quienes {
-    background: #39424e;
-    max-width: 900px;
-    margin: 35px auto;
-    padding: 35px;
-    border-radius: 15px;
-    color: white;
+  width: 90%;
+  max-width: 1200px;
+  margin: 60px auto;
 }
 
 .section-quienes h2 {
-    color: #d4b15f;
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 15px;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
 }
 
 .section-quienes p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    text-align: justify;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  text-align: justify;
 }
 
-/* =========================================================
-   RESPONSIVE PARA TABLETS (<=1024px)
-========================================================= */
-
-@media (max-width: 1024px) {
-
-    .header-container {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-    }
-
-    .titulo-header {
-        font-size: 1.5rem;
-    }
-
-    .menu {
-        gap: 18px;
-    }
+/* ================================
+   SERVICIOS
+================================ */
+.servicios {
+  width: 90%;
+  max-width: 1200px;
+  margin: 70px auto;
 }
 
-/* =========================================================
-   RESPONSIVE PARA CELULARES (<=768px)
-========================================================= */
+.titulo-servicios {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.4rem;
+}
 
+.contenedor-servicios {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.servicio {
+  width: 30%;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px #ccc;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.servicio i {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.servicio h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+/* ================================
+   PROYECTOS
+================================ */
+.proyectos {
+  width: 90%;
+  max-width: 1200px;
+  margin: 70px auto;
+}
+
+.titulo-proyectos {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.4rem;
+}
+
+.contenedor-proyectos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+}
+
+.proyecto {
+  width: 30%;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ccc;
+  text-align: center;
+}
+
+/* ================================
+   FOOTER
+================================ */
+footer {
+  background: #111;
+  color: #fff;
+  padding: 40px 20px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+/* =====================================================
+   RESPONSIVE — TABLET Y CELULARES
+===================================================== */
+@media (max-width: 992px) {
+  .servicio, .proyecto {
+    width: 45%;
+  }
+}
+
+/* ====================== CELULARES ===================== */
 @media (max-width: 768px) {
 
-    /* ===== HEADER ===== */
-    .header-container {
-        flex-direction: column;
-        text-align: center;
-        gap: 10px;
-    }
+  header {
+    padding: 15px 0;
+  }
 
-    .logo img {
-        width: 120px;
-    }
+  .hamburguesa {
+    display: block;
+  }
 
-    .titulo-header {
-        font-size: 1.3rem;
-    }
+  nav ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #000;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+  }
 
-    /* ===== MENÚ HAMBURGUESA ===== */
-    .hamburguesa {
-        display: block;
-        margin-top: 10px;
-    }
+  nav ul.activo {
+    max-height: 500px;
+    padding: 15px 0;
+  }
 
-    .menu {
-        position: absolute;
-        top: 100%;
-        right: 0;
-        width: 100%;
-        background: rgba(0,0,0,0.9);
+  nav ul li {
+    padding: 12px 0;
+  }
 
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
+  .hero {
+    height: auto;
+    padding: 50px 20px;
+  }
 
-        padding: 20px 0;
+  .overlay {
+    padding: 20px;
+    max-width: 95%;
+  }
 
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height .3s ease;
-    }
+  .overlay h2 {
+    font-size: 1.9rem;
+  }
 
-    .menu.activo {
-        max-height: 600px; /* se abre */
-    }
+  .overlay p {
+    font-size: 1rem;
+    text-align: justify;
+  }
 
-    /* Submenús en móvil */
-    .submenu {
-        display: none;
-        position: static;
-        background: rgba(0,0,0,0.5);
-        width: 100%;
-        padding-left: 10px;
-    }
+  .servicio, .proyecto {
+    width: 100%;
+  }
 
-    .submenu.activo {
-        display: block;
-    }
-
-    /* ===== SECCIÓN QUIÉNES SOMOS ===== */
-    .section-quienes {
-        max-width: 95%;
-        padding: 20px;
-        border-radius: 12px;
-    }
-
-    .section-quienes h2 {
-        font-size: 1.8rem;
-        text-align: center;
-    }
-
-    .section-quienes p {
-        font-size: 1rem;
-        line-height: 1.6;
-    }
-
-    /* ===== CONTENEDORES GENERALES ===== */
-    section, div, .container {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    body {
-        overflow-x: hidden;
-    }
+  .submenu {
+    position: static;
+    background: #222;
+    width: 100%;
+  }
 }
-
-
-
-
-
-
-
 
 
 
