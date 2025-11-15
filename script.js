@@ -1,16 +1,14 @@
-// sencillo toggle para menú móvil
 document.addEventListener('DOMContentLoaded', () => {
   const btn = document.querySelector('.hamburguesa');
-  const menuMovil = document.querySelector('.menu-movil') || document.querySelector('.menu');
+  const menuMovil = document.querySelector('.menu-desktop'); // ← SOLUCIÓN
 
   if (!btn || !menuMovil) return;
 
   btn.addEventListener('click', () => {
     menuMovil.classList.toggle('activo');
-    document.body.classList.toggle('menu-open'); // opcional: evitar scroll de fondo
+    document.body.classList.toggle('menu-open');
   });
 
-  // Cerrar menú al click en enlace (mejor UX)
   menuMovil.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => {
       menuMovil.classList.remove('activo');
@@ -18,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Opcional: cerrar al redimensionar a desktop
   window.addEventListener('resize', () => {
     if (window.innerWidth > 820) {
       menuMovil.classList.remove('activo');
