@@ -485,12 +485,6 @@ img {
     z-index: 2001;
   }
 
-  /* OCULTAR TEXTO DE MENÚ (por si existe) */
-  .texto-menu {
-    display: none !important;
-    visibility: hidden !important;
-  }
-
   /* LOGO + TITULO */
   .header-brand {
     flex: 1;
@@ -555,3 +549,5 @@ img {
     right: 0 !important;
   }
 }
+
+
