@@ -450,89 +450,66 @@ img {
   color: #bfa45b;
 }
 
-/* -------------------------
-  FIX MÓVIL: forzar layout correcto
-------------------------- */
+/* ============================
+   HEADER MÓVIL ESTILO BOLÍVAR
+============================ */
 @media (max-width: 820px) {
 
-  /* Evita scroll horizontal */
+  /* Evitar scroll lateral */
   html, body {
-    max-width: 100%;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
+    width: 100% !important;
   }
 
-  /* Header: columna centrada y logo pequeño */
+  /* HEADER: fila, centrado y compacto */
   header {
     display: flex !important;
-    flex-direction: column !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
     align-items: center !important;
-    justify-content: center !important;
-    gap: 8px;
-    padding: 10px 12px !important;
+    padding: 10px 18px !important;
+    gap: 0 !important;
+    width: 100% !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   }
 
-  /* Reduce el logo drásticamente en móvil */
-  header .logo,
-  .logo {
-    height: 90px !important;
+  /* Ícono hamburguesa visible */
+  .hamburguesa {
+    display: block !important;
+    font-size: 32px !important;
+    color: #0d1b2a !important;
+  }
+
+  /* CONTENEDOR DEL LOGO CENTRADO */
+  .logo-container {
+    flex: 1 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  /* Logo pequeño y proporcionado */
+  .logo, 
+  header .logo {
+    height: 60px !important;
     width: auto !important;
-    max-width: 220px !important;
+    max-width: 180px !important;
     object-fit: contain !important;
   }
 
-  /* Título centrado y más pequeño */
-  header h1 {
-    font-size: 1.1rem !important;
-    line-height: 1.1 !important;
-    text-align: center !important;
-    margin: 0 0 6px 0 !important;
-  }
-
-  /* Mostrar icono hamburguesa en móvil */
-  .hamburguesa {
+  /* Botón búsqueda a la derecha */
+  .buscar-btn {
     display: block !important;
-    position: relative;
-    z-index: 2001;
+    font-size: 26px !important;
+    color: #0d1b2a !important;
   }
 
   /* Ocultar menú de escritorio */
   nav .menu {
     display: none !important;
   }
-
-  /* Ajustes para contenedores */
-  .hero,
-  .section-quienes,
-  section.light,
-  section.dark,
-  .servicios-grid,
-  .galeria {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding-left: 12px !important;
-    padding-right: 12px !important;
-    box-sizing: border-box !important;
-  }
-
-  /* Overlay */
-  .hero .overlay {
-    padding: 20px 16px !important;
-    max-width: 100% !important;
-    border-radius: 12px !important;
-  }
-
-  /* Tipografía */
-  .hero p, .section-quienes p {
-    font-size: 0.98rem !important;
-    line-height: 1.5 !important;
-  }
-
-  /* Imágenes adaptativas */
-  .galeria img, .proyecto img {
-    width: 100% !important;
-    height: auto !important;
-  }
 }
+
 
 
 
