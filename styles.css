@@ -369,117 +369,238 @@ footer {
   visibility: hidden;
 }
 
-/* ======== RESPONSIVE PARA CELULARES ======== */
-@media (max-width: 768px) {
-
-  .hero {
-    padding: 40px 15px;     /* Reduce padding para que no se vea tan apretado */
-    min-height: 90vh;       /* Para que el bloque cubra bien la pantalla */
-  }
-
-  .hero .overlay {
-    padding: 25px 20px;     /* Reduce padding interno */
-    max-width: 95%;         /* Hace que ya NO se salga del ancho */
-    border-radius: 12px;
-  }
-
-  .hero h2 {
-    font-size: 1.9rem;      /* Reduce tamaño del título */
-    margin-bottom: 15px;
-  }
-
-  .hero p {
-    font-size: 1rem;
-    line-height: 1.6;
-    text-align: justify;    /* Se ve más ordenado en móvil */
-  }
+/* =========================================================
+   RESET GENERAL – NECESARIO PARA QUE NADA SE DESBORDE
+========================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-/* ===== MENÚ HAMBURGUESA ===== */
+
+body {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    background-color: #f5f5f5;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* =========================================================
+   HEADER – LOGO + TÍTULO + MENÚ
+========================================================= */
+
+header {
+    width: 100%;
+    background: #000;
+    padding: 15px 20px;
+    position: relative;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 150px;
+    height: auto;
+}
+
+.titulo-header {
+    color: #d4b15f;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+/* =========================================================
+   MENÚ GENERAL (DESKTOP)
+========================================================= */
+
+nav {
+    position: relative;
+    z-index: 9999;
+}
+
 .hamburguesa {
-  display: none;
-  font-size: 32px;
-  color: #fff;
-  cursor: pointer;
+    display: none;
+    font-size: 32px;
+    color: #fff;
+    cursor: pointer;
 }
 
-/* ===== MENÚ DESKTOP ===== */
 .menu {
-  display: flex;
-  gap: 25px;
-  list-style: none;
+    display: flex;
+    list-style: none;
+    gap: 25px;
 }
 
 .menu a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 5px 10px;
 }
 
-/* Submenús (hover en PC) */
+/* Submenús en PC */
 .submenu {
-  display: none;
-  position: absolute;
-  background: #222;
-  padding: 10px 0;
-  list-style: none;
+    display: none;
+    position: absolute;
+    background: #222;
+    list-style: none;
+    padding: 10px 0;
 }
 
-.dropdown:hover > .submenu {
-  display: block;
+.dropdown:hover .submenu {
+    display: block;
 }
 
 .submenu li a {
-  display: block;
-  padding: 8px 20px;
-  color: #fff;
+    display: block;
+    padding: 8px 20px;
 }
 
-/* ===== RESPONSIVE ===== */
+/* =========================================================
+   SECCIÓN QUIÉNES SOMOS
+========================================================= */
+
+.section-quienes {
+    background: #39424e;
+    max-width: 900px;
+    margin: 35px auto;
+    padding: 35px;
+    border-radius: 15px;
+    color: white;
+}
+
+.section-quienes h2 {
+    color: #d4b15f;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.section-quienes p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+/* =========================================================
+   RESPONSIVE PARA TABLETS (<=1024px)
+========================================================= */
+
+@media (max-width: 1024px) {
+
+    .header-container {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .titulo-header {
+        font-size: 1.5rem;
+    }
+
+    .menu {
+        gap: 18px;
+    }
+}
+
+/* =========================================================
+   RESPONSIVE PARA CELULARES (<=768px)
+========================================================= */
+
 @media (max-width: 768px) {
-  .hamburguesa {
-    display: block;
-  }
 
-  nav {
-    width: 100%;
-  }
+    /* ===== HEADER ===== */
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
 
-  .menu {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 100%;
-    background: rgba(0,0,0,0.9);
-    flex-direction: column;
-    gap: 10px;
-    padding: 20px 0;
+    .logo img {
+        width: 120px;
+    }
 
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height .3s ease;
-  }
+    .titulo-header {
+        font-size: 1.3rem;
+    }
 
-  .menu.activo {
-    max-height: 500px;
-  }
+    /* ===== MENÚ HAMBURGUESA ===== */
+    .hamburguesa {
+        display: block;
+        margin-top: 10px;
+    }
 
-  /* Submenús en móvil (al hacer click) */
-  .submenu {
-    position: static;
-    display: none;
-    background: rgba(0,0,0,0.5);
-    padding-left: 20px;
-  }
+    .menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        background: rgba(0,0,0,0.9);
 
-  .submenu.activo {
-    display: block;
-  }
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
 
-  .dropdown > a {
-    display: block;
-    padding: 10px;
-  }
+        padding: 20px 0;
+
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height .3s ease;
+    }
+
+    .menu.activo {
+        max-height: 600px; /* se abre */
+    }
+
+    /* Submenús en móvil */
+    .submenu {
+        display: none;
+        position: static;
+        background: rgba(0,0,0,0.5);
+        width: 100%;
+        padding-left: 10px;
+    }
+
+    .submenu.activo {
+        display: block;
+    }
+
+    /* ===== SECCIÓN QUIÉNES SOMOS ===== */
+    .section-quienes {
+        max-width: 95%;
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    .section-quienes h2 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .section-quienes p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    /* ===== CONTENEDORES GENERALES ===== */
+    section, div, .container {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
 }
+
 
 
 
